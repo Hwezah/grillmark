@@ -53,7 +53,7 @@ export function HomeRange() {
               <button
                 type="button"
                 onClick={() => add(p.slug)}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-4 py-2.5 text-[13.5px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-brand px-3 py-2.5 text-[13px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
               >
                 <ShoppingCart className="h-4 w-4" strokeWidth={2} />
                 {added === p.slug ? "Added ✓" : "Add to cart"}
@@ -63,9 +63,10 @@ export function HomeRange() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Order ${p.name} on WhatsApp`}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1FAD52] text-white transition-transform hover:-translate-y-0.5"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-[#1FAD52] px-3 py-2.5 text-[13px] font-bold text-white transition-transform hover:-translate-y-0.5"
               >
-                <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2} />
+                <MessageCircle className="h-4 w-4" strokeWidth={2} />
+                Order now
               </a>
             </div>
           </div>
