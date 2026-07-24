@@ -136,7 +136,8 @@ export default function HomePage() {
               <div className={`${eyebrow} mb-3`}>The range</div>
               <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,48px)] font-bold uppercase leading-[1.04] tracking-[-0.02em]">
                 Sausages
-                <br />
+                <br className="max-[620px]:hidden" />
+                <span className="hidden max-[620px]:inline"> </span>
                 &amp; Franks
               </h2>
             </Reveal>
@@ -326,13 +327,14 @@ export default function HomePage() {
       <section className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
           <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[720px]:flex-col max-[720px]:items-center max-[720px]:text-center">
-            <Reveal>
+            <Reveal className="max-[720px]:w-full">
               <div className={`${eyebrow} mb-3`}>
                 @grillmark · Follow the flavour
               </div>
               <h2 className="m-0 font-hanken text-[clamp(26px,3.2vw,42px)] font-bold uppercase leading-[1.08] tracking-[-0.02em]">
                 Smoke, snap
-                <br />
+                <br className="max-[620px]:hidden" />
+                <span className="hidden max-[620px]:inline"> </span>
                 &amp; good times
               </h2>
             </Reveal>

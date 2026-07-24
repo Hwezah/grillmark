@@ -60,7 +60,8 @@ export function AccountPanel() {
           <>
             <div className="mb-2 font-anton text-[30px] leading-[1.05] tracking-[0.01em] text-ink">
               Welcome to
-              <br />
+              <br className="max-[560px]:hidden" />
+              <span className="hidden max-[560px]:inline"> </span>
               the grill.
             </div>
             <p className="m-0 mb-6 text-[14.5px] leading-[1.55] text-clay-700">
