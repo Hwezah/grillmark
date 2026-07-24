@@ -75,10 +75,11 @@ export function HomeWhy() {
       <div className="relative mx-auto w-[min(74vw,480px)] max-[840px]:w-[min(88vw,420px)]">
         {/* Sparkles glowing behind the plate */}
         <Sparkles
-          count={110}
-          size={30}
-          speed={0.55}
-          className="pointer-events-none absolute -inset-[22%]"
+          mode="fountain"
+          count={130}
+          sizeRange={[0.06, 0.24]}
+          speed={0.9}
+          className="pointer-events-none absolute -inset-x-[26%] -bottom-[10%] -top-[30%]"
         />
         <div data-plate className="relative aspect-square">
           <Image
