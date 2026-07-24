@@ -177,13 +177,13 @@ export function Navbar() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth={2.2}
+              strokeWidth={1.4}
               strokeLinecap="round"
               aria-hidden
               className="h-5 w-5"
             >
-              <line x1="4" y1="9" x2="20" y2="9" />
-              <line x1="4" y1="15" x2="20" y2="15" />
+              <line x1="4" y1="9.5" x2="20" y2="9.5" />
+              <line x1="4" y1="14.5" x2="20" y2="14.5" />
             </svg>
           </button>
         </div>

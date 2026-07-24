@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, ShoppingCart, X } from "lucide-react";
+import { Bell, Flame, MessageCircle, ShoppingCart, X } from "lucide-react";
 
 import {
   formatUGX,
@@ -260,31 +260,37 @@ export function ComingSoonCard({
   name: string;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-[22px] bg-[#EFE9DE]">
-      <div className="relative flex aspect-[10/11] flex-col items-center justify-center gap-2 text-clay">
-        <span className="absolute left-5 top-5 rounded-full bg-brand-deep px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream-light">
+    <div className="group flex flex-col overflow-hidden rounded-[22px] border border-ink/[0.06] bg-cream-card shadow-[0_18px_40px_-30px_rgba(32,13,10,0.35)]">
+      {/* Smokehouse teaser — a designed panel instead of a blank image slot. */}
+      <div className="relative flex aspect-[10/11] items-center justify-center overflow-hidden bg-gradient-to-br from-[#2a140f] via-cocoa to-[#180a07]">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(226,79,2,0.28),transparent_62%)]"
+        />
+        {/* faint criss-cross grill grate */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.06] [background-image:repeating-linear-gradient(90deg,#fff_0_1px,transparent_1px_26px),repeating-linear-gradient(0deg,#fff_0_1px,transparent_1px_26px)]"
+        />
+        <Flame
+          aria-hidden
+          className="relative h-16 w-16 text-ember drop-shadow-[0_6px_20px_rgba(226,79,2,0.5)] transition-transform duration-500 group-hover:scale-110"
+          strokeWidth={1.4}
+        />
+        <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/[0.12] px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream-light backdrop-blur-sm">
+          <span
+            aria-hidden
+            className="h-1.5 w-1.5 animate-pulse rounded-full bg-ember"
+          />
           Coming soon
         </span>
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          className="h-8 w-8 opacity-60"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="m21 15-5-5L5 21" />
-        </svg>
-        <span className="text-[14px]">Coming soon</span>
       </div>
-      <div className="flex flex-1 flex-col p-6 pt-4">
+      <div className="flex flex-1 flex-col p-6 pt-5">
         <h3 className="m-0 font-hanken text-[19px] font-semibold tracking-[-0.01em] text-ink">
           {name}
         </h3>
         <div className="mt-1 font-mono text-[12px] uppercase tracking-[0.1em] text-clay">
-          Coming soon
+          In the smokehouse
         </div>
         <a
           href={waNotify(name)}
@@ -292,7 +298,8 @@ export function ComingSoonCard({
           rel="noopener noreferrer"
           className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-cocoa px-5 py-3 text-[14.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
         >
-          Notify me <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
+          <Bell className="h-[16px] w-[16px]" strokeWidth={2} aria-hidden />
+          Notify me
         </a>
       </div>
     </div>

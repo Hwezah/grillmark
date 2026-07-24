@@ -5,12 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Lock, Trash2 } from "lucide-react";
 
-import { buildOrderMessage, formatUGX } from "@/lib/constants";
+import { formatUGX } from "@/lib/constants";
 import { computeTotals, formatGrams } from "@/lib/cart-totals";
 import { useCart } from "@/context/cart-context";
-import { cn } from "@/lib/utils";
-
-const STEPS = ["Cart", "Details", "Payment"];
+import { CheckoutSteps } from "@/components/checkout-steps";
 
 export function CartView() {
   const { items, setQty, removeItem } = useCart();
@@ -41,35 +39,7 @@ export function CartView() {
           Your cart
         </h1>
 
-        <ol className="m-0 mt-6 flex list-none items-center gap-0 p-0">
-          {STEPS.map((step, i) => (
-            <li key={step} className="flex items-center">
-              <span className="flex items-center gap-2.5">
-                <span
-                  className={cn(
-                    "flex h-7 w-7 items-center justify-center rounded-full font-mono text-[12.5px] font-bold",
-                    i === 0
-                      ? "bg-brand text-cream-light"
-                      : "bg-ink/[0.08] text-clay"
-                  )}
-                >
-                  {i + 1}
-                </span>
-                <span
-                  className={cn(
-                    "text-[14.5px] font-semibold",
-                    i === 0 ? "text-ink" : "text-clay"
-                  )}
-                >
-                  {step}
-                </span>
-              </span>
-              {i < STEPS.length - 1 && (
-                <span aria-hidden className="mx-4 h-px w-[clamp(20px,5vw,56px)] bg-ink/15" />
-              )}
-            </li>
-          ))}
-        </ol>
+        <CheckoutSteps current={0} />
 
         {totals.lines.length === 0 ? (
           /* ----------------------------- EMPTY ----------------------------- */
@@ -235,14 +205,12 @@ export function CartView() {
                 </div>
               )}
 
-              <a
-                href={buildOrderMessage(totals.lines, totals)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/cart/details"
                 className="mt-5 flex items-center justify-center gap-2.5 rounded-[16px] bg-brand px-6 py-[17px] text-[16px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
               >
                 Proceed to checkout <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
-              </a>
+              </Link>
               <p className="m-0 mt-4 flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-clay">
                 <Lock className="h-3.5 w-3.5" /> Secure Mobile Money checkout
               </p>
