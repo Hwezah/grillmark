@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { BRAND, CONTACT, NAV_LINKS, WA_MAIN } from "@/lib/constants";
 
@@ -11,9 +12,14 @@ export function Footer() {
         <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1">
           {/* Brand */}
           <div>
-            <span className="mb-5 block font-anton text-4xl leading-none tracking-[0.02em] text-cream-light">
-              GRILL<span className="text-ember">MARK</span>
-            </span>
+            <Image
+              src="/images/logo-cream.png"
+              alt="GrillMark"
+              width={220}
+              height={189}
+              className="mb-5 h-[84px] w-auto"
+            />
+            <span className="sr-only">GrillMark — {BRAND.tagline}</span>
             <a
               href={BRAND.siteUrl}
               target="_blank"

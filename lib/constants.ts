@@ -27,6 +27,76 @@ export function waLink(message: string): string {
 
 export const WA_MAIN = waLink("Hi GrillMark! I'd like to place an order.");
 
+/** The GrillMark range. Images live in /public/images. */
+export type Product = {
+  slug: string;
+  name: string;
+  category: "Beef" | "Chicken";
+  weight: string;
+  tagline: string;
+  cook: string;
+  image: string;
+  blurb: string;
+  featured?: boolean;
+};
+
+export const PRODUCTS: Product[] = [
+  {
+    slug: "beef-franks",
+    name: "Fresh Beef Franks",
+    category: "Beef",
+    weight: "1kg",
+    tagline: "Meaty · Juicy · Flavourful",
+    cook: "Grill · Roast · Fry",
+    image: "/images/pack-beef-franks.png",
+    blurb:
+      "Classic beef franks with a proper snap — real cuts and bold seasoning, no fillers.",
+    featured: true,
+  },
+  {
+    slug: "beef-sausage",
+    name: "Fresh Beef Sausage",
+    category: "Beef",
+    weight: "1kg",
+    tagline: "Meaty · Juicy · Flavourful",
+    cook: "Grill · Roast · Fry",
+    image: "/images/pack-beef-sausage.png",
+    blurb:
+      "Coarse-ground beef sausage, seasoned to be tasted. Built for the centre of the plate.",
+    featured: true,
+  },
+  {
+    slug: "chicken-franks",
+    name: "Fresh Chicken Franks",
+    category: "Chicken",
+    weight: "1kg",
+    tagline: "Meaty · Juicy · Flavourful",
+    cook: "Grill · Roast · Fry",
+    image: "/images/pack-chicken-franks.png",
+    blurb:
+      "Lean, juicy chicken franks the whole table reaches for — a lighter link with the same mark.",
+    featured: true,
+  },
+  {
+    slug: "chicken-viennas",
+    name: "Smoked Chicken Viennas",
+    category: "Chicken",
+    weight: "500g",
+    tagline: "Meaty · Juicy · Flavourful",
+    cook: "Grill · Roast · Fry",
+    image: "/images/pack-chicken-viennas.png",
+    blurb:
+      "Gently smoked chicken viennas — tender, ready in minutes, and gone even faster.",
+  },
+];
+
+export const FEATURED_PRODUCTS = PRODUCTS.filter((p) => p.featured);
+
+/** wa.me link pre-filled to order a specific product. */
+export function waOrder(name: string, weight: string): string {
+  return waLink(`Hi GrillMark! I'd like to order ${name} (${weight}).`);
+}
+
 /** Primary nav — hrefs point at routes; pages not yet designed fall back to /. */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
