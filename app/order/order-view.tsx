@@ -24,6 +24,7 @@ import {
   waLink,
 } from "@/lib/constants";
 import { computeTotals, formatGrams } from "@/lib/cart-totals";
+import { REVIEWS } from "@/lib/reviews";
 import { useCart } from "@/context/cart-context";
 import { QtyStepper } from "@/components/qty-stepper";
 import { Reveal } from "@/components/reveal";
@@ -31,47 +32,6 @@ import { cn } from "@/lib/utils";
 
 const eyebrow =
   "font-mono text-[12.5px] uppercase tracking-[0.16em] text-brand-deep";
-
-/* ------------------------------- reviews data ------------------------------ */
-
-const REVIEWS = [
-  {
-    initials: "CA",
-    color: "#B52126",
-    name: "Chef Andrew",
-    text: "Yes madam, I did — and they are far better than the other brands I have tasted.",
-  },
-  {
-    initials: "HC",
-    color: "#1FAD52",
-    name: "Home cook",
-    text: "The sausages are delicious, with a smooth, pleasant texture. Their taste is distinct from the usual options on the market — truly refreshing. Well done on a great product.",
-  },
-  {
-    initials: "PF",
-    color: "#E24F02",
-    name: "A picky family",
-    text: "We tasted the frankfurters and we all loved them. My wife, who is not easy to impress, says they're better than Farmer's Choice.",
-  },
-  {
-    initials: "CC",
-    color: "#5C1A16",
-    name: "Chef Chris",
-    text: "Your sausage is tasting good — I like the seasoning.",
-  },
-  {
-    initials: "WG",
-    color: "#1FAD52",
-    name: "Weekend griller",
-    text: "The seasoning had a slight kick of spice but stayed balanced. They stayed juicy after cooking and didn't dry out like some sausages I've had before.",
-  },
-  {
-    initials: "BP",
-    color: "#B52126",
-    name: "Busy parent",
-    text: "The sausages were extremely on point — my kids really loved them so much. I tried them today: a solid 10 out of 10.",
-  },
-];
 
 /* --------------------------------- FAQ data -------------------------------- */
 
@@ -559,7 +519,7 @@ export function OrderView() {
       </section>
 
       {/* ----------------------------- WHOLESALE ----------------------------- */}
-      <section className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section id="wholesale" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[1fr_1.05fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
           <div>
             <Reveal className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">

@@ -62,6 +62,9 @@ export function Navbar() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  // Home opens on the dark hero — run the bar in cream until it goes solid.
+  const onDark = pathname === "/" && !solid;
+
   return (
     <>
       <nav
@@ -82,7 +85,13 @@ export function Navbar() {
                 href={l.href}
                 className={cn(
                   "whitespace-nowrap text-[13px] font-semibold uppercase tracking-[0.09em] transition-colors",
-                  active ? "font-bold text-brand" : "text-ink hover:text-brand"
+                  active
+                    ? onDark
+                      ? "font-bold text-ember"
+                      : "font-bold text-brand"
+                    : onDark
+                      ? "text-cream-soft hover:text-ember"
+                      : "text-ink hover:text-brand"
                 )}
               >
                 {l.label}
@@ -93,7 +102,7 @@ export function Navbar() {
 
         {/* Center — logo */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Logo priority />
+          <Logo priority variant={onDark ? "cream" : "ink"} />
         </div>
 
         {/* Right — actions */}
@@ -102,7 +111,10 @@ export function Navbar() {
             type="button"
             onClick={() => setSearchOpen(true)}
             aria-label="Search"
-            className="flex p-1.5 text-ink transition-colors hover:text-brand"
+            className={cn(
+              "flex p-1.5 transition-colors",
+              onDark ? "text-cream-soft hover:text-ember" : "text-ink hover:text-brand"
+            )}
           >
             <Search className="h-7 w-7" strokeWidth={1.6} />
           </button>
@@ -111,7 +123,10 @@ export function Navbar() {
             type="button"
             onClick={toggleAccount}
             aria-label="Account"
-            className="relative flex p-1.5 text-ink transition-colors hover:text-brand"
+            className={cn(
+              "relative flex p-1.5 transition-colors",
+              onDark ? "text-cream-soft hover:text-ember" : "text-ink hover:text-brand"
+            )}
           >
             <User className="h-7 w-7" strokeWidth={1.6} />
             {user && (
@@ -125,7 +140,10 @@ export function Navbar() {
           <Link
             href="/cart"
             aria-label="Cart"
-            className="relative flex p-1.5 text-ink transition-colors hover:text-brand"
+            className={cn(
+              "relative flex p-1.5 transition-colors",
+              onDark ? "text-cream-soft hover:text-ember" : "text-ink hover:text-brand"
+            )}
           >
             <ShoppingCart className="h-7 w-7" strokeWidth={1.6} />
             {count > 0 && (
@@ -149,7 +167,10 @@ export function Navbar() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Menu"
-            className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-current text-ink"
+            className={cn(
+              "flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-current",
+              onDark ? "text-cream-soft" : "text-ink"
+            )}
           >
             <Menu className="h-5 w-5" strokeWidth={2.2} />
           </button>
