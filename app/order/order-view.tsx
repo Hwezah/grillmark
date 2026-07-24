@@ -29,6 +29,10 @@ import { REVIEWS } from "@/lib/reviews";
 import { useCart } from "@/context/cart-context";
 import { QtyStepper } from "@/components/qty-stepper";
 import { Reveal } from "@/components/reveal";
+import {
+  CurveDividers,
+  type CurveEntry,
+} from "@/components/curve-dividers";
 import { cn } from "@/lib/utils";
 
 const eyebrow =
@@ -183,6 +187,11 @@ function WholesaleForm() {
 
 /* --------------------------------- the page -------------------------------- */
 
+const CURVES: CurveEntry[] = [
+  { label: "Wholesale", from: "#FBF6EE", to: "#200d0a" },
+  { label: "Faq", from: "#200d0a", to: "#EFECE5" },
+];
+
 export function OrderView() {
   const { items, setQty } = useCart();
   const totals = computeTotals(items);
@@ -203,6 +212,7 @@ export function OrderView() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+      <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
         <div className="mx-auto max-w-[880px] max-[560px]:text-center">
@@ -520,7 +530,7 @@ export function OrderView() {
       </section>
 
       {/* ----------------------------- WHOLESALE ----------------------------- */}
-      <section id="wholesale" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[1fr_1.05fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
           <div>
             <Reveal className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
@@ -610,7 +620,7 @@ export function OrderView() {
       </section>
 
       {/* -------------------------------- FAQ -------------------------------- */}
-      <section className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
+      <section data-screen-label="Faq" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[0.9fr_1.1fr] gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
           <div>
             <Reveal className={`${eyebrow} mb-4`}>Good to know</Reveal>

@@ -4,6 +4,10 @@ import { ArrowRight, Clock, Heart, TrendingUp, Users } from "lucide-react";
 
 import { CONTACT, waLink } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
+import {
+  CurveDividers,
+  type CurveEntry,
+} from "@/components/curve-dividers";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -101,9 +105,14 @@ function applyLink(role: string): string {
   return waLink(`Hi GrillMark! I'd like to apply for the ${role} role.`);
 }
 
+const CURVES: CurveEntry[] = [
+  { label: "Roles", from: "#FBF6EE", to: "#200d0a" },
+];
+
 export default function CareersPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+      <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
         <div className="mx-auto max-w-[880px]">
@@ -206,7 +215,7 @@ export default function CareersPage() {
       </section>
 
       {/* ------------------------------ OPEN ROLES ----------------------------- */}
-      <section
+      <section data-screen-label="Roles"
         id="roles"
         className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft"
       >
