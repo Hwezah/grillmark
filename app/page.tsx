@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   Facebook,
   ImageIcon,
   Instagram,
@@ -114,7 +115,7 @@ export default function HomePage() {
               href="/about"
               className="mt-6 inline-flex items-center gap-2.5 border-b-2 border-brand/30 pb-1 text-[15.5px] font-extrabold text-brand transition-colors hover:border-brand"
             >
-              Read the full story <span aria-hidden>→</span>
+              Read the full story <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </Link>
           </Reveal>
         </div>
@@ -137,7 +138,7 @@ export default function HomePage() {
                 href="/products"
                 className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-cocoa px-6 py-3 text-[14px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
               >
-                View all products <span aria-hidden>→</span>
+                View all products <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
               </Link>
             </Reveal>
           </div>
@@ -279,7 +280,7 @@ export default function HomePage() {
               href="/order"
               className="inline-flex items-center gap-2.5 rounded-full bg-brand px-7 py-[14px] text-[14.5px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
             >
-              Read more reviews <span aria-hidden>→</span>
+              Read more reviews <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </Link>
           </Reveal>
         </div>
@@ -303,7 +304,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-full bg-brand px-8 py-[16px] text-[15.5px] font-extrabold text-cream-light transition-transform hover:-translate-y-[3px]"
             >
-              Order on WhatsApp <span aria-hidden>→</span>
+              Order on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </a>
             <a
               href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}

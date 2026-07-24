@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MessageCircle, ShoppingCart, X } from "lucide-react";
+import { ArrowRight, MessageCircle, ShoppingCart, X } from "lucide-react";
 
 import {
   formatUGX,
@@ -292,7 +292,7 @@ export function ComingSoonCard({
           rel="noopener noreferrer"
           className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-cocoa px-5 py-3 text-[14.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
         >
-          Notify me <span aria-hidden>→</span>
+          Notify me <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </a>
       </div>
     </div>

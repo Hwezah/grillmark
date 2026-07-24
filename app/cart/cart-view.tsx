@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Lock, Trash2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Lock, Trash2 } from "lucide-react";
 
 import { buildOrderMessage, formatUGX } from "@/lib/constants";
 import { computeTotals, formatGrams } from "@/lib/cart-totals";
@@ -85,7 +85,7 @@ export function CartView() {
               href="/products"
               className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-brand px-8 py-[15px] text-[15px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
             >
-              Browse the range <span aria-hidden>→</span>
+              Browse the range <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </Link>
           </div>
         ) : (
@@ -166,7 +166,7 @@ export function CartView() {
                 href="/products"
                 className="inline-flex items-center gap-2 text-[15px] font-bold text-ink transition-colors hover:text-brand"
               >
-                <span aria-hidden>←</span> Continue shopping
+                <ArrowLeft className="h-[17px] w-[17px]" aria-hidden /> Continue shopping
               </Link>
               <div className="flex items-center overflow-hidden rounded-full border border-ink/10 bg-white pl-5">
                 <input
@@ -241,7 +241,7 @@ export function CartView() {
                 rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2.5 rounded-[16px] bg-brand px-6 py-[17px] text-[16px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
               >
-                Proceed to checkout <span aria-hidden>→</span>
+                Proceed to checkout <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
               </a>
               <p className="m-0 mt-4 flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-clay">
                 <Lock className="h-3.5 w-3.5" /> Secure Mobile Money checkout

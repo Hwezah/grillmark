@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
+import { ArrowRight } from "lucide-react";
 
 const Sparkles = dynamic(
   () => import("@/components/sparkles").then((m) => m.Sparkles),
@@ -76,7 +77,7 @@ export function HomeHero() {
             href="/products"
             className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-brand px-8 py-[16px] text-[15px] font-extrabold text-white shadow-[0_18px_40px_-16px_rgba(226,79,2,0.65)] transition-transform hover:-translate-y-[3px]"
           >
-            Our Sausages and Franks <span aria-hidden>→</span>
+            Our Sausages and Franks <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
           </Link>
           <Link
             href="/order#wholesale"

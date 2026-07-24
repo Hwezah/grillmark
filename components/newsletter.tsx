@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -52,7 +53,7 @@ export function NewsletterForm() {
           type="submit"
           className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ember px-6 py-3 text-[14.5px] font-extrabold text-white transition-transform hover:-translate-y-0.5"
         >
-          Subscribe <span aria-hidden>→</span>
+          Subscribe <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </button>
       </form>
       <p className="m-0 mt-3 font-mono text-[11.5px] tracking-[0.04em] text-[#8d7a70]">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
@@ -145,7 +146,7 @@ export default function ProductsPage() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-brand px-9 py-[17px] text-[15.5px] font-extrabold text-cream-light transition-transform hover:-translate-y-[3px]"
           >
-            Order on WhatsApp <span aria-hidden>→</span>
+            Order on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
           </a>
         </Reveal>
       </section>

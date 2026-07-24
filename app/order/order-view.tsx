@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
+  ArrowRight,
   Check,
   Download,
   Mail,
@@ -168,7 +169,7 @@ function WholesaleForm() {
         rel="noopener noreferrer"
         className="mt-5 flex items-center justify-center gap-2.5 rounded-[16px] bg-ember px-6 py-4 text-[15.5px] font-extrabold text-white transition-transform hover:-translate-y-0.5"
       >
-        Send enquiry on WhatsApp <span aria-hidden>→</span>
+        Send enquiry on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
       </a>
       <p className="m-0 mt-3.5 text-center text-[13px] text-[#8d7a70]">
         Prefer email?{" "}
@@ -301,7 +302,7 @@ export function OrderView() {
               )}
             >
               <span className="h-[7px] w-[7px] rounded-full bg-dot shadow-[0_0_0_3px_rgba(123,227,139,0.3)]" />
-              Send order on WhatsApp <span aria-hidden>→</span>
+              Send order on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </a>
             <Link
               href="/cart"
@@ -313,7 +314,7 @@ export function OrderView() {
               )}
             >
               <ShoppingCart className="h-[18px] w-[18px]" /> Proceed to cart{" "}
-              <span aria-hidden>→</span>
+              <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </Link>
           </div>
           <p className="m-0 mt-4 text-center text-[13.5px] text-clay-600">
@@ -635,7 +636,7 @@ export function OrderView() {
                 rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-brand px-7 py-[15px] text-[15px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
               >
-                Ask us anything <span aria-hidden>→</span>
+                Ask us anything <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
               </a>
             </Reveal>
           </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Clock, Heart, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Clock, Heart, TrendingUp, Users } from "lucide-react";
 
 import { CONTACT, waLink } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
@@ -256,7 +256,7 @@ export default function CareersPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 text-[14.5px] font-extrabold text-white transition-transform hover:-translate-y-0.5"
                 >
-                  Apply <span aria-hidden>→</span>
+                  Apply <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
                 </a>
               </Reveal>
             ))}
@@ -297,7 +297,7 @@ export default function CareersPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-full bg-cream-light px-8 py-[16px] text-[15.5px] font-extrabold text-brand transition-transform hover:-translate-y-[3px]"
             >
-              Send your CV <span aria-hidden>→</span>
+              Send your CV <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </a>
             <a
               href="#roles"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 import {
   buildOrderMessage,
@@ -158,7 +159,7 @@ export function GrillBoxBuilder() {
           )}
         >
           <span className="h-[7px] w-[7px] rounded-full bg-dot shadow-[0_0_0_3px_rgba(123,227,139,0.3)]" />
-          Order my box on WhatsApp <span aria-hidden>→</span>
+          Order my box on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </a>
       </div>
     </div>
