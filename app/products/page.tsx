@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
+import { SketchReveal } from "@/components/sketch-reveal";
 import { RangeGrid } from "@/components/range-grid";
 import { GrillBoxBuilder } from "@/components/grill-box-builder";
 import { PackFinder } from "@/components/pack-finder";
@@ -136,6 +137,12 @@ export default function ProductsPage() {
           <h2 className="m-0 font-hanken text-[clamp(34px,5vw,64px)] font-extrabold uppercase leading-[0.98] tracking-[-0.025em] text-ink">
             Fire it up
           </h2>
+          <SketchReveal
+            src="/images/doodle-flourish.png"
+            width={925}
+            height={235}
+            className="mx-auto mt-4 w-[200px] max-w-[60%]"
+          />
           <p className="mx-auto mt-4 max-w-[520px] text-[clamp(15px,1.25vw,18px)] leading-[1.65] text-clay-700">
             Know what you want already? Tell us on WhatsApp and we&apos;ll pack
             it cold and get it moving across Kampala.
