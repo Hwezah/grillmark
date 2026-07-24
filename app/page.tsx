@@ -12,6 +12,7 @@ import {
 import { CONTACT, WA_MAIN } from "@/lib/constants";
 import { REVIEWS } from "@/lib/reviews";
 import { Reveal } from "@/components/reveal";
+import { SketchReveal } from "@/components/sketch-reveal";
 import { HomeHero } from "@/components/home-hero";
 import { HomeRange } from "@/components/home-range";
 import { HomeWhy } from "@/components/home-why";
@@ -79,12 +80,18 @@ export default function HomePage() {
       <section className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[1.05fr_0.95fr] items-center gap-[clamp(28px,4.5vw,72px)] max-[880px]:grid-cols-1">
           <Reveal className="relative">
-            <span className="absolute left-[6%] top-[-2%] z-10 -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink">
+            <span className="absolute left-[6%] top-[-2%] z-10 -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink max-[880px]:static max-[880px]:ml-[6%] max-[880px]:inline-block max-[880px]:text-[17px]">
               Made from <span className="text-ember">100%</span>
               <br />
               organic meat
             </span>
-            <div className="relative aspect-[1100/583] w-full">
+            <SketchReveal
+              src="/images/doodle-arrow.png"
+              width={675}
+              height={439}
+              className="pointer-events-none absolute left-[8%] top-[8%] z-10 w-[42%] max-w-[210px] max-[880px]:static max-[880px]:ml-[16%] max-[880px]:mt-3 max-[880px]:w-[46%]"
+            />
+            <div className="relative aspect-[1100/583] w-full max-[880px]:mt-4">
               <Image
                 src="/images/story-bulls.webp"
                 alt="Three bulls — the beef heritage behind GrillMark"
@@ -154,19 +161,12 @@ export default function HomePage() {
               Why GrillMark? Because the{" "}
               <span className="text-brand">flavour speaks</span> for itself.
             </h2>
-            <svg
-              aria-hidden
-              viewBox="0 0 190 32"
-              className="mx-auto mt-4 h-7 w-[170px] text-ember"
-            >
-              <path
-                d="M6 24 C 48 8, 108 4, 132 12 C 148 17, 140 26, 122 23 C 108 20, 118 9, 146 10 C 162 11, 176 14, 184 17"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-            </svg>
+            <SketchReveal
+              src="/images/doodle-flourish.png"
+              width={925}
+              height={235}
+              className="mx-auto mt-4 w-[200px] max-w-[62%]"
+            />
             <p className="mx-auto mt-5 max-w-[560px] text-[15.5px] leading-[1.7] text-clay-700">
               From the very first bite the difference is clear. Real cuts, real
               smoke and clean seasoning — sold raw and ready so the final mark
@@ -232,6 +232,12 @@ export default function HomePage() {
               <br />
               word for it
             </h2>
+            <SketchReveal
+              src="/images/doodle-flourish.png"
+              width={925}
+              height={235}
+              className="mx-auto mt-5 w-[210px] max-w-[64%]"
+            />
           </Reveal>
 
           <div className="grid grid-cols-3 gap-[clamp(16px,2vw,28px)] max-[560px]:grid-cols-1">

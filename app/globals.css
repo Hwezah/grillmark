@@ -79,3 +79,25 @@
     transform: none;
   }
 }
+
+/* Sketch-reveal: hand-drawn doodle artwork that "writes" itself in with a
+   directional wipe on entry and resets on exit, so it re-draws each time it
+   scrolls back into view. */
+@layer utilities {
+  .sketch-reveal {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: clip-path;
+  }
+
+  .sketch-reveal.is-drawn {
+    clip-path: inset(0 0 0 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sketch-reveal {
+      transition: none;
+      clip-path: none;
+    }
+  }
+}
