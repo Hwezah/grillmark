@@ -95,8 +95,17 @@ const config: Config = {
           to: { opacity: "1" },
         },
         "panel-in": {
-          from: { opacity: "0", transform: "translateY(10px) scale(.965)" },
-          to: { opacity: "1", transform: "translateY(0) scale(1)" },
+          // Keep the -50%/-50% centering offset inside the keyframes; the
+          // animation's `both` fill mode otherwise clobbers the translate
+          // utilities and leaves the panel off-centre after it settles.
+          from: {
+            opacity: "0",
+            transform: "translate(-50%,-50%) translateY(10px) scale(.965)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translate(-50%,-50%) translateY(0) scale(1)",
+          },
         },
       },
       animation: {
