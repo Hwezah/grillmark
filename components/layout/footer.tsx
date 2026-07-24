@@ -40,25 +40,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Explore */}
-          <div>
-            <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
-              Explore
-            </div>
-            <div className="flex flex-col gap-3">
-              {NAV_LINKS.map((l) => (
-                <Link
-                  key={l.label}
-                  href={l.href}
-                  className="text-[15px] font-medium text-[#E9D8CB] transition-colors hover:text-white"
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact */}
+          {/* Contact — sits between the brand block and Explore */}
           <div>
             <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
               Get in touch
@@ -90,6 +72,24 @@ export function Footer() {
               >
                 {CONTACT.emailOrders}
               </a>
+            </div>
+          </div>
+
+          {/* Explore */}
+          <div>
+            <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
+              Explore
+            </div>
+            <div className="flex flex-col gap-3">
+              {NAV_LINKS.map((l) => (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="text-[15px] font-medium text-[#E9D8CB] transition-colors hover:text-white"
+                >
+                  {l.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
