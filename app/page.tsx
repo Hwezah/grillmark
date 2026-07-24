@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BRAND, FEATURED_PRODUCTS, WA_MAIN } from "@/lib/constants";
+import { BRAND, PRODUCTS, WA_MAIN } from "@/lib/constants";
+
+const FEATURED_PRODUCTS = PRODUCTS.slice(0, 3);
 import { Reveal } from "@/components/reveal";
 import { CurveDividers, type CurveEntry } from "@/components/curve-dividers";
 import { ProductCard } from "@/components/product-card";

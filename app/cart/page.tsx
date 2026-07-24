@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 
-import { ComingSoon } from "@/components/coming-soon";
+import { CartView } from "@/app/cart/cart-view";
 
-export const metadata: Metadata = { title: "Your Grill Box" };
+export const metadata: Metadata = {
+  title: "Your Cart",
+  description:
+    "Review your GrillMark grill box and check out with Mobile Money via WhatsApp.",
+};
 
 export default function CartPage() {
-  return (
-    <ComingSoon
-      title="Your Grill Box"
-      blurb="Your cart and checkout land here once the Products page is wired up. It'll sync to your account so your box follows you across devices."
-    />
-  );
+  return <CartView />;
 }

@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 
-import { ComingSoon } from "@/components/coming-soon";
+import { OrderView } from "@/app/order/order-view";
 
-export const metadata: Metadata = { title: "Contact & Orders" };
+export const metadata: Metadata = {
+  title: "Order & Contact",
+  description:
+    "Build your GrillMark order and send it on WhatsApp, reach us directly, or enquire about wholesale supply across Kampala.",
+};
 
 export default function OrderPage() {
-  return (
-    <ComingSoon
-      title="Get in Touch"
-      blurb="Contact and the Mobile Money checkout flow live here soon. For now, reach us on WhatsApp to place an order."
-    />
-  );
+  return <OrderView />;
 }
