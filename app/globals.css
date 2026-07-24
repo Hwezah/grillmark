@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn semantic tokens tuned to the GrillMark brand */
+    --background: 39 53% 96%; /* cream #FBF6EE */
+    --foreground: 13 32% 10%; /* ink #231512 */
+
+    --card: 44 60% 98%; /* #FFFDF8 */
+    --card-foreground: 13 32% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 13 32% 10%;
+
+    --primary: 358 69% 42%; /* brand red #B52126 */
+    --primary-foreground: 40 60% 96%; /* cream #FFF6EC */
+
+    --secondary: 40 30% 92%;
+    --secondary-foreground: 13 32% 10%;
+
+    --muted: 40 30% 92%;
+    --muted-foreground: 24 13% 48%; /* clay #8a766c */
+
+    --accent: 20 98% 45%; /* ember #E24F02 */
+    --accent-foreground: 40 60% 96%;
+
+    --destructive: 358 69% 42%;
+    --destructive-foreground: 40 60% 96%;
+
+    --border: 30 22% 87%;
+    --input: 30 22% 87%;
+    --ring: 358 69% 42%;
+
+    --radius: 0.75rem;
+
+    /* Peridot PE is proprietary and not shippable via chat — fall back to
+       Hanken until the .otf is added to /public/fonts and wired in. */
+    --font-peridot: var(--font-hanken);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #e24f02;
+    color: #fff6ec;
+  }
+}
+
+/* Reveal-on-scroll: elements start hidden, .is-visible reveals them. */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
