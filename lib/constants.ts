@@ -39,9 +39,9 @@ export const PACK_GRAMS: Record<PackSize, number> = {
   "1kg": 1000,
 };
 
-/** Per-100g nutrition figures shown in the details modal. */
+/** Per-100g nutrition panel shown in the product details modal. */
 export type Nutrition = {
-  kcal: number;
+  energy: string;
   protein: string;
   fat: string;
   carbs: string;
@@ -57,16 +57,19 @@ export type Product = {
   prices: Record<PackSize, number>;
   image: string;
   blurb: string;
-  /** Details-modal content (reference design). */
-  badge: string;
-  description: string;
+  /** Small pill shown over the pack shot in the details modal. */
+  badge?: string;
+  /** Full ingredient declaration. */
   ingredients: string;
+  /** Nutrition per 100g. */
   nutrition: Nutrition;
+  /** Storage / shelf-life guidance. */
   storage: string;
+  /** How to cook it. */
   cooking: string;
 };
 
-const STORAGE_NOTE =
+const STORAGE_STD =
   "Keep refrigerated at 0–4°C. Use within 4 days of delivery, or freeze on the day for up to 1 month.";
 
 export const PRODUCTS: Product[] = [
@@ -78,15 +81,19 @@ export const PRODUCTS: Product[] = [
     image: "/images/pack-beef-sausage.png",
     blurb:
       "Coarse-ground beef sausage, seasoned to be tasted. Built for the centre of the plate.",
-    badge: "Classic",
-    description:
-      "Coarse-ground and boldly seasoned — the full-flavoured link that anchors any grill.",
+    badge: "HEARTY",
     ingredients:
-      "Beef (84%), water, GrillMark signature spice blend (salt, garlic, black pepper, natural spices), potato starch. No fillers, no MSG, no artificial colours. Contains wheat.",
-    nutrition: { kcal: 265, protein: "15g", fat: "22g", carbs: "3g", salt: "1.8g" },
-    storage: STORAGE_NOTE,
+      "Beef (78%), water, GrillMark spice blend (salt, black pepper, garlic, herbs, natural spices), potato starch. No fillers, no MSG, no artificial colours.",
+    nutrition: {
+      energy: "260 kcal",
+      protein: "18g",
+      fat: "20g",
+      carbs: "3g",
+      salt: "1.8g",
+    },
+    storage: STORAGE_STD,
     cooking:
-      "Grill over medium coals or pan-fry 12–15 min, turning often, until deeply browned and cooked through.",
+      "Grill or pan-fry over medium heat 12–16 min, turning often, until browned and cooked through. Rest a minute before serving.",
   },
   {
     slug: "chicken-sausages",
@@ -95,14 +102,18 @@ export const PRODUCTS: Product[] = [
     prices: { "500g": 15_000, "1kg": 30_000 },
     image: "/images/pack-chicken-viennas.png",
     blurb:
-      "Gently smoked chicken links — tender, ready in minutes, and gone even faster.",
-    badge: "Lean",
-    description:
       "Lighter, gently smoked and juicy — the easy-going link the whole family reaches for.",
+    badge: "LEAN",
     ingredients:
       "Chicken (86%), water, GrillMark mild spice blend (salt, garlic, herbs, natural spices), potato starch. No fillers, no MSG, no artificial colours.",
-    nutrition: { kcal: 210, protein: "16g", fat: "15g", carbs: "3g", salt: "1.6g" },
-    storage: STORAGE_NOTE,
+    nutrition: {
+      energy: "210 kcal",
+      protein: "16g",
+      fat: "15g",
+      carbs: "3g",
+      salt: "1.6g",
+    },
+    storage: STORAGE_STD,
     cooking:
       "Grill or pan-fry over medium heat 10–14 min, turning often, until cooked through and golden. Stays beautifully juicy.",
   },
@@ -114,15 +125,19 @@ export const PRODUCTS: Product[] = [
     image: "/images/pack-beef-franks.png",
     blurb:
       "Classic beef franks with a proper snap — real cuts and bold seasoning, no fillers.",
-    badge: "Smoky",
-    description:
-      "A proper frank with real snap — smoky, juicy and made for buns and braais.",
+    badge: "CLASSIC",
     ingredients:
-      "Beef (82%), water, GrillMark frank spice blend (salt, paprika, garlic, natural spices), potato starch, natural smoke. No MSG, no artificial colours. Contains wheat.",
-    nutrition: { kcal: 255, protein: "13g", fat: "21g", carbs: "4g", salt: "1.9g" },
-    storage: STORAGE_NOTE,
+      "Beef (80%), water, GrillMark spice blend (salt, black pepper, paprika, garlic), potato starch. No fillers, no MSG, no artificial colours.",
+    nutrition: {
+      energy: "250 kcal",
+      protein: "14g",
+      fat: "21g",
+      carbs: "3g",
+      salt: "1.9g",
+    },
+    storage: STORAGE_STD,
     cooking:
-      "Grill, roast or pan-fry 10–12 min over medium heat — or simmer 6–8 min for the classic snap.",
+      "Simmer, grill or pan-fry 6–10 min until hot through with a proper snap. Great in a bun or on the board.",
   },
   {
     slug: "chicken-franks",
@@ -132,15 +147,19 @@ export const PRODUCTS: Product[] = [
     image: "/images/pack-chicken-franks.png",
     blurb:
       "Lean, juicy chicken franks the whole table reaches for — a lighter link with the same mark.",
-    badge: "Family pick",
-    description:
-      "Lean, juicy chicken franks the whole table reaches for — lighter, with the same mark.",
+    badge: "LEAN",
     ingredients:
-      "Chicken (84%), water, GrillMark mild spice blend (salt, garlic, herbs, natural spices), potato starch. No fillers, no MSG, no artificial colours. Contains wheat.",
-    nutrition: { kcal: 205, protein: "14g", fat: "14g", carbs: "4g", salt: "1.6g" },
-    storage: STORAGE_NOTE,
+      "Chicken (82%), water, GrillMark mild spice blend (salt, garlic, herbs, natural spices), potato starch. No fillers, no MSG, no artificial colours.",
+    nutrition: {
+      energy: "190 kcal",
+      protein: "15g",
+      fat: "13g",
+      carbs: "3g",
+      salt: "1.5g",
+    },
+    storage: STORAGE_STD,
     cooking:
-      "Grill or pan-fry over medium heat 10–14 min, turning for an even golden skin.",
+      "Simmer, grill or pan-fry 6–10 min until hot through. Lean, juicy and family-friendly.",
   },
 ];
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   CookingPot,
   Flame,
   ImageIcon,
@@ -288,7 +289,7 @@ export default function RecipesPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-full bg-cream-light px-8 py-[16px] text-[15.5px] font-extrabold text-brand transition-transform hover:-translate-y-[3px]"
             >
-              Order on WhatsApp <span aria-hidden>→</span>
+              Order on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
             </a>
             <Link
               href="/products"

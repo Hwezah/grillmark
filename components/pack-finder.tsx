@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 import { PRODUCTS, waLink, type PackSize } from "@/lib/constants";
 import { useCart } from "@/context/cart-context";
@@ -108,7 +109,7 @@ export function PackFinder() {
           onClick={() => setShowPicks(true)}
           className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand px-7 py-3.5 text-[15px] font-extrabold text-cream-light transition-transform hover:-translate-y-0.5"
         >
-          See my picks <span aria-hidden>→</span>
+          See my picks <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </button>
       </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
@@ -38,7 +39,7 @@ export default function ProductsPage() {
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1080px] max-[560px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
               <span className="mr-2 inline-block h-2 w-2 rounded-full bg-ember align-middle" />
@@ -57,7 +58,7 @@ export default function ProductsPage() {
           <Reveal
             as="p"
             delay={120}
-            className="mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
+            className="mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[560px]:mx-auto"
           >
             Every link is sold <strong className="text-ink">raw and ready</strong>{" "}
             — premium cuts, signature spice, and the grill left to you.
@@ -145,7 +146,7 @@ export default function ProductsPage() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-brand px-9 py-[17px] text-[15.5px] font-extrabold text-cream-light transition-transform hover:-translate-y-[3px]"
           >
-            Order on WhatsApp <span aria-hidden>→</span>
+            Order on WhatsApp <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
           </a>
         </Reveal>
       </section>

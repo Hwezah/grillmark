@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const Sparkles = dynamic(
   () => import("@/components/sparkles").then((m) => m.Sparkles),
@@ -119,7 +119,7 @@ export function HomeWhy() {
           href="/about"
           className="inline-flex items-center gap-2.5 rounded-full bg-brand px-8 py-[16px] text-[15px] font-extrabold text-cream-light transition-transform hover:-translate-y-[3px]"
         >
-          Learn more about GrillMark <span aria-hidden>→</span>
+          Learn more about GrillMark <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </Link>
       </div>
     </div>

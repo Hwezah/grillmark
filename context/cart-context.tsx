@@ -13,6 +13,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/context/auth-context";
+import { PACK_SIZES, productBySlug } from "@/lib/constants";
 
 export type CartSize = "500g" | "1kg";
 
@@ -39,6 +40,21 @@ const GUEST_KEY = "gm-box"; // prototype storage contract: "productId__size" -> 
 
 /* ----------------------------- guest storage ----------------------------- */
 
+const VALID_SIZES = new Set<CartSize>(PACK_SIZES as CartSize[]);
+
+/**
+ * Keep only rows that map to a real product, a known pack size, and a
+ * positive quantity. Guards the badge and cart against stale storage or DB
+ * rows (e.g. a slug from an earlier prototype) that would otherwise inflate
+ * the count or surface as items "added by default".
+ */
+function sanitize(items: CartItem[]): CartItem[] {
+  return items.filter(
+    (i) =>
+      i.qty > 0 && VALID_SIZES.has(i.size) && Boolean(productBySlug(i.productId))
+  );
+}
+
 function readGuest(): CartItem[] {
   if (typeof window === "undefined") return [];
   try {
@@ -46,12 +62,12 @@ function readGuest(): CartItem[] {
       string,
       number
     >;
-    return Object.entries(raw)
-      .map(([key, qty]) => {
+    return sanitize(
+      Object.entries(raw).map(([key, qty]) => {
         const [productId, size] = key.split("__");
         return { productId, size: size as CartSize, qty: Number(qty) || 0 };
       })
-      .filter((i) => i.productId && i.qty > 0);
+    );
   } catch {
     return [];
   }
@@ -96,11 +112,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       .select("product_id, size, qty")
       .eq("user_id", user.id);
     setItems(
-      (data ?? []).map((r) => ({
-        productId: r.product_id as string,
-        size: r.size as CartSize,
-        qty: r.qty as number,
-      }))
+      sanitize(
+        (data ?? []).map((r) => ({
+          productId: r.product_id as string,
+          size: r.size as CartSize,
+          qty: r.qty as number,
+        }))
+      )
     );
     setLoading(false);
   }, [supabase, user]);
@@ -110,7 +128,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     if (!authed) {
       // Signed out: guest cart is the source of truth.
       mergedFor.current = null;
-      setItems(readGuest());
+      const clean = readGuest();
+      setItems(clean);
+      // Re-persist so any stale/unknown rows are pruned from storage for good.
+      writeGuest(clean);
       return;
     }
     if (!user || !supabase) return;
