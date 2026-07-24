@@ -5,11 +5,11 @@ import * as THREE from "three";
 
 interface SparklesProps {
   /**
-   * drift — embers scattered across the field, rising slowly (hero).
-   * fountain — sparks born at a source under the plate that shoot up
-   * and outward.
+   * drift — faint embers scattered across a dark field, rising slowly (hero).
+   * pop — solid dots that appear around the centre (the plate), crisp at
+   * birth, swelling slightly and fading as they drift outward.
    */
-  mode?: "drift" | "fountain";
+  mode?: "drift" | "pop";
   count?: number;
   /** World-unit particle size range [min, max]; a few "bubbles" exceed max. */
   sizeRange?: [number, number];
@@ -17,10 +17,11 @@ interface SparklesProps {
   className?: string;
 }
 
-/** Warm brand palette for the embers. */
-const COLORS = ["#E8B27A", "#E24F02", "#FFF6EC", "#B52126", "#F2C99B"];
+/** Warm brand palettes per mode. */
+const DRIFT_COLORS = ["#E8B27A", "#E24F02", "#FFF6EC", "#B52126", "#F2C99B"];
+const POP_COLORS = ["#E24F02", "#F4CBA6", "#E8B27A", "#B52126", "#F7DEC4", "#C86A3A"];
 
-/** Soft round sprite so points render as glowing dots, not squares. */
+/** Soft round sprite for the glowing drift embers. */
 function makeSprite(): THREE.Texture {
   const c = document.createElement("canvas");
   c.width = c.height = 64;
@@ -36,12 +37,13 @@ function makeSprite(): THREE.Texture {
   return tex;
 }
 
-// Each particle lives entirely on the GPU: born crisp at its spawn point,
-// carried by its velocity, fading to nothing as its life runs out, then
-// reborn on the next cycle.
+// Every particle lives on the GPU: born crisp at its spawn point at its own
+// peak brightness, carried by its velocity (swelling a little in pop mode),
+// fading to nothing as its life ends, then reborn on the next cycle.
 const VERT = /* glsl */ `
   uniform float uTime;
   uniform float uScale;
+  uniform float uGrow;
   attribute vec3 aSpawn;
   attribute vec3 aVel;
   attribute vec3 aColor;
@@ -49,6 +51,7 @@ const VERT = /* glsl */ `
   attribute float aBirth;
   attribute float aLife;
   attribute float aSeed;
+  attribute float aPeak;
   varying vec3 vColor;
   varying float vAlpha;
 
@@ -57,38 +60,44 @@ const VERT = /* glsl */ `
     float t = age / aLife;
 
     vec3 pos = aSpawn + aVel * age;
-    pos.x += sin(uTime * 0.7 + aSeed) * 0.06;
+    pos.x += sin(uTime * 0.7 + aSeed) * 0.05;
 
     // Crisp at birth, easing out to nothing as the spark dies.
-    vAlpha = pow(1.0 - t, 1.5);
+    vAlpha = aPeak * pow(1.0 - t, 1.4);
     vColor = aColor;
 
+    float size = aSize * (1.0 + uGrow * t);
     vec4 mv = modelViewMatrix * vec4(pos, 1.0);
-    gl_PointSize = aSize * (uScale / -mv.z);
+    gl_PointSize = size * (uScale / -mv.z);
     gl_Position = projectionMatrix * mv;
   }
 `;
 
 const FRAG = /* glsl */ `
   uniform sampler2D uMap;
+  uniform float uSolid;
   varying vec3 vColor;
   varying float vAlpha;
 
   void main() {
-    float mask = texture2D(uMap, gl_PointCoord).a;
+    // Solid matte dot for pop mode; soft glow sprite for drift.
+    float d = length(gl_PointCoord - vec2(0.5));
+    float circle = 1.0 - smoothstep(0.42, 0.5, d);
+    float glow = texture2D(uMap, gl_PointCoord).a;
+    float mask = mix(glow, circle, uSolid);
     gl_FragColor = vec4(vColor, mask * vAlpha);
   }
 `;
 
 /**
- * Three.js ember/sparkle field. Every spark is born crisp, travels, and fades
- * out over its own lifetime — in assorted sizes. Used on the home hero
- * (drift) and beneath the flavour plate (fountain).
+ * Three.js sparkle field. Every spark is born crisp, travels, and fades out
+ * over its own lifetime — in assorted sizes. `drift` scatters glowing embers
+ * across the home hero; `pop` blooms solid dots around the flavour plate.
  */
 export function Sparkles({
   mode = "drift",
-  count = 160,
-  sizeRange = [0.05, 0.16],
+  count = 110,
+  sizeRange = [0.03, 0.12],
   speed = 1,
   className,
 }: SparklesProps) {
@@ -100,7 +109,8 @@ export function Sparkles({
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 
     const isSmall = window.innerWidth < 720;
-    const n = isSmall ? Math.round(count * 0.5) : count;
+    const n = isSmall ? Math.round(count * 0.6) : count;
+    const pop = mode === "pop";
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
@@ -133,43 +143,55 @@ export function Sparkles({
     const births = new Float32Array(n);
     const lives = new Float32Array(n);
     const seeds = new Float32Array(n);
+    const peaks = new Float32Array(n);
 
+    const palette = pop ? POP_COLORS : DRIFT_COLORS;
     const color = new THREE.Color();
     const [sMin, sMax] = sizeRange;
 
     const seedParticle = (i: number) => {
-      if (mode === "fountain") {
-        // Born as a spark under the plate: bottom-centre source, kicked
-        // up and outward.
-        const dir = Math.random() * 2 - 1;
-        spawn[i * 3] = dir * halfW * 0.5;
-        spawn[i * 3 + 1] = -halfH * (0.75 + Math.random() * 0.2);
-        spawn[i * 3 + 2] = Math.random() * 3 - 1.5;
-        vel[i * 3] = dir * (0.15 + Math.random() * 0.5) * speed;
-        vel[i * 3 + 1] = (0.45 + Math.random() * 0.85) * speed;
+      if (pop) {
+        // Born on a loose ring around the plate, nudged gently outward.
+        const a = Math.random() * Math.PI * 2;
+        const r = 0.5 + Math.random() * 0.55;
+        const x = Math.cos(a) * r * halfW;
+        const y = Math.sin(a) * r * halfH;
+        spawn[i * 3] = x;
+        spawn[i * 3 + 1] = y;
+        spawn[i * 3 + 2] = Math.random() * 2 - 1;
+        const drift = (0.04 + Math.random() * 0.1) * speed;
+        vel[i * 3] = Math.cos(a) * drift;
+        vel[i * 3 + 1] = Math.sin(a) * drift;
         vel[i * 3 + 2] = 0;
-        lives[i] = 2.4 + Math.random() * 2.6;
+        lives[i] = 1.8 + Math.random() * 2.2;
+        // Solid dots read clearly — keep them near-opaque at birth.
+        peaks[i] = 0.75 + Math.random() * 0.25;
       } else {
         spawn[i * 3] = (Math.random() * 2 - 1) * halfW * 2.2;
         spawn[i * 3 + 1] = (Math.random() * 2 - 1) * halfH * 1.15;
         spawn[i * 3 + 2] = Math.random() * 4 - 2;
         vel[i * 3] = (Math.random() * 2 - 1) * 0.03 * speed;
-        vel[i * 3 + 1] = (0.1 + Math.random() * 0.22) * speed;
+        vel[i * 3 + 1] = (0.08 + Math.random() * 0.2) * speed;
         vel[i * 3 + 2] = 0;
         lives[i] = 4 + Math.random() * 5;
+        // Mostly faint embers; roughly a quarter burn bright.
+        peaks[i] =
+          Math.random() < 0.25
+            ? 0.7 + Math.random() * 0.3
+            : 0.2 + Math.random() * 0.35;
       }
 
-      // Mostly small sparks, a few large glowing bubbles.
-      const big = Math.random() < 0.08;
+      // Mostly small sparks, the occasional large bubble.
+      const big = Math.random() < (pop ? 0.14 : 0.06);
       sizes[i] = big
-        ? sMax * (1.6 + Math.random() * 0.9)
+        ? sMax * (pop ? 1.15 + Math.random() * 0.35 : 1.4 + Math.random() * 0.8)
         : sMin + (sMax - sMin) * Math.pow(Math.random(), 2.2);
 
       // Negative birth staggers the field so cycles never pulse together.
       births[i] = -Math.random() * lives[i];
       seeds[i] = Math.random() * Math.PI * 2;
 
-      color.set(COLORS[(Math.random() * COLORS.length) | 0]);
+      color.set(palette[(Math.random() * palette.length) | 0]);
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
@@ -185,6 +207,7 @@ export function Sparkles({
     geo.setAttribute("aBirth", new THREE.BufferAttribute(births, 1));
     geo.setAttribute("aLife", new THREE.BufferAttribute(lives, 1));
     geo.setAttribute("aSeed", new THREE.BufferAttribute(seeds, 1));
+    geo.setAttribute("aPeak", new THREE.BufferAttribute(peaks, 1));
     geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 50);
 
     const mat = new THREE.ShaderMaterial({
@@ -192,19 +215,30 @@ export function Sparkles({
         uTime: { value: 0 },
         uScale: { value: 300 },
         uMap: { value: makeSprite() },
+        uSolid: { value: pop ? 1 : 0 },
+        uGrow: { value: pop ? 0.35 : 0 },
       },
       vertexShader: VERT,
       fragmentShader: FRAG,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: pop ? THREE.NormalBlending : THREE.AdditiveBlending,
     });
 
     scene.add(new THREE.Points(geo, mat));
 
     const reseed = () => {
       for (let i = 0; i < n; i++) seedParticle(i);
-      for (const name of ["aSpawn", "aVel", "aColor", "aSize", "aBirth", "aLife", "aSeed"]) {
+      for (const name of [
+        "aSpawn",
+        "aVel",
+        "aColor",
+        "aSize",
+        "aBirth",
+        "aLife",
+        "aSeed",
+        "aPeak",
+      ]) {
         (geo.getAttribute(name) as THREE.BufferAttribute).needsUpdate = true;
       }
     };

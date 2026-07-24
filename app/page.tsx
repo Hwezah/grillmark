@@ -139,6 +139,19 @@ export default function HomePage() {
               Why GrillMark? Because the{" "}
               <span className="text-brand">flavour speaks</span> for itself.
             </h2>
+            <svg
+              aria-hidden
+              viewBox="0 0 190 32"
+              className="mx-auto mt-4 h-7 w-[170px] text-ember"
+            >
+              <path
+                d="M6 24 C 48 8, 108 4, 132 12 C 148 17, 140 26, 122 23 C 108 20, 118 9, 146 10 C 162 11, 176 14, 184 17"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
             <p className="mx-auto mt-5 max-w-[560px] text-[15.5px] leading-[1.7] text-clay-700">
               From the very first bite the difference is clear. Real cuts, real
               smoke and clean seasoning — sold raw and ready so the final mark

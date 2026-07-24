@@ -43,7 +43,7 @@ export function HomeHero() {
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(226,79,2,0.10),transparent_58%)]"
       />
-      <Sparkles mode="drift" count={190} sizeRange={[0.04, 0.15]} speed={0.8} />
+      <Sparkles mode="drift" count={110} sizeRange={[0.03, 0.12]} speed={0.8} />
 
       <div className="relative mx-auto flex max-w-[760px] flex-col items-center text-center">
         <p

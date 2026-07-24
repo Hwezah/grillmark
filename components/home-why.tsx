@@ -12,26 +12,33 @@ const Sparkles = dynamic(
   { ssr: false }
 );
 
+// Card set and placement from the reference recording: two hugging the
+// plate's shoulders, two at its lower rim.
 const NOTES = [
   {
-    title: "Grilled your way",
-    body: "Sold raw and ready for the fire",
-    className: "left-[3%] top-[40%] max-[900px]:static",
+    title: "Bold, honest flavour",
+    body: "Real smoke and spice in every link",
+    className: "left-[3%] top-[7%] max-[900px]:static",
   },
   {
     title: "No fillers, ever",
     body: "Just clean meat and honest seasoning",
-    className: "right-[3%] top-[4%] max-[900px]:static",
+    className: "right-[3%] top-[3%] max-[900px]:static",
+  },
+  {
+    title: "Grilled your way",
+    body: "Sold raw and ready for the fire",
+    className: "left-[3%] top-[56%] max-[900px]:static",
   },
   {
     title: "Made fresh in Ntinda",
     body: "Cured and delivered cold to your door",
-    className: "bottom-[8%] right-[5%] max-[900px]:static",
+    className: "right-[3%] top-[62%] max-[900px]:static",
   },
 ];
 
 /**
- * "Why GrillMark" plate scene: Three.js sparkles glowing behind the plate,
+ * "Why GrillMark" plate scene: bubbles popping around the plate (Three.js),
  * GSAP floating the annotation cards and gently bobbing the plate.
  */
 export function HomeWhy() {
@@ -62,21 +69,14 @@ export function HomeWhy() {
 
   return (
     <div ref={scope} className="relative mx-auto max-w-[900px]">
-      {/* Static soft blobs from the design */}
-      <span aria-hidden className="absolute -left-6 top-[6%] h-14 w-14 rounded-full bg-ember/60 max-[900px]:hidden" />
-      <span aria-hidden className="absolute left-[6%] top-[42%] h-9 w-9 rounded-full bg-[#F4CBA6] max-[900px]:hidden" />
-      <span aria-hidden className="absolute right-[10%] top-[30%] h-4 w-4 rounded-full bg-ember max-[900px]:hidden" />
-      <span aria-hidden className="absolute bottom-[10%] left-[16%] h-3 w-3 rounded-full bg-clay/60 max-[900px]:hidden" />
-      <span aria-hidden className="absolute -left-10 bottom-[2%] h-10 w-10 rounded-full bg-[#F7DEC4] max-[900px]:hidden" />
-
       <div className="relative mx-auto w-[min(74vw,480px)] max-[900px]:w-[min(88vw,420px)]">
-        {/* Sparkles glowing behind the plate */}
+        {/* Bubbles popping around the plate */}
         <Sparkles
-          mode="fountain"
-          count={130}
-          sizeRange={[0.06, 0.24]}
-          speed={0.9}
-          className="pointer-events-none absolute -inset-x-[26%] -bottom-[10%] -top-[30%]"
+          mode="pop"
+          count={16}
+          sizeRange={[0.06, 0.4]}
+          speed={1}
+          className="pointer-events-none absolute -inset-[24%]"
         />
         <div data-plate className="relative aspect-square">
           <Image
