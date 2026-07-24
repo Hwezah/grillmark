@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { Search, ShoppingCart, User, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { BRAND, CONTACT, NAV_LINKS, WA_MAIN } from "@/lib/constants";
@@ -173,7 +173,18 @@ export function Navbar() {
               onDark ? "text-cream-soft" : "text-ink"
             )}
           >
-            <Menu className="h-5 w-5" strokeWidth={2.2} />
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.2}
+              strokeLinecap="round"
+              aria-hidden
+              className="h-5 w-5"
+            >
+              <line x1="4" y1="9" x2="20" y2="9" />
+              <line x1="4" y1="15" x2="20" y2="15" />
+            </svg>
           </button>
         </div>
       </nav>
