@@ -19,6 +19,20 @@ import { NewsletterForm } from "@/components/newsletter";
 const eyebrow =
   "font-mono text-[12.5px] uppercase tracking-[0.16em] text-brand-deep";
 
+/** TikTok glyph — lucide-react no longer ships brand marks, so inline it. */
+function TikTok({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+      className={className}
+    >
+      <path d="M16.5 3c.32 1.86 1.4 3.32 3.5 3.66v2.66c-1.28.03-2.47-.35-3.5-.98v5.9c0 3.32-2.68 6-6 6a5.99 5.99 0 0 1-6-6c0-3.32 2.68-6 6-6 .17 0 .33.01.5.02v2.76a3.25 3.25 0 0 0-.5-.04 3.26 3.26 0 1 0 3.26 3.26V3h2.74Z" />
+    </svg>
+  );
+}
+
 const PILLARS = [
   {
     num: "01",
@@ -173,13 +187,13 @@ export default function HomePage() {
           className="pointer-events-none absolute -bottom-24 -right-20 w-[clamp(280px,30vw,460px)] opacity-[0.06]"
         />
         <div className="relative mx-auto max-w-[1180px]">
-          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
+          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan max-[560px]:text-center">
             Why GrillMark
           </Reveal>
           <Reveal
             as="h2"
             delay={60}
-            className="m-0 mb-[clamp(32px,4vw,48px)] max-w-[640px] font-hanken text-[clamp(28px,3.8vw,52px)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-[#F7EFE2]"
+            className="m-0 mb-[clamp(32px,4vw,48px)] max-w-[640px] font-hanken text-[clamp(28px,3.8vw,52px)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-[#F7EFE2] max-[560px]:mx-auto max-[560px]:text-center"
           >
             Raw on arrival.
             <br />
@@ -219,7 +233,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-3 gap-[clamp(16px,2vw,28px)] max-[880px]:grid-cols-1">
+          <div className="grid grid-cols-3 gap-[clamp(16px,2vw,28px)] max-[560px]:grid-cols-1">
             {HOME_REVIEWS.map((r, i) => (
               <Reveal
                 key={r.name}
@@ -304,7 +318,7 @@ export default function HomePage() {
       {/* ------------------------------- SOCIAL ------------------------------- */}
       <section className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
-          <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[720px]:flex-col max-[720px]:items-start">
+          <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[720px]:flex-col max-[720px]:items-center max-[720px]:text-center">
             <Reveal>
               <div className={`${eyebrow} mb-3`}>
                 @grillmark · Follow the flavour
@@ -315,14 +329,17 @@ export default function HomePage() {
                 &amp; good times
               </h2>
             </Reveal>
-            <Reveal delay={80} className="flex gap-2.5">
+            <Reveal
+              delay={80}
+              className="flex gap-2.5 max-[720px]:w-full max-[720px]:justify-between"
+            >
               <a
-                href="https://instagram.com/grillmark"
+                href="https://tiktok.com/@grillmark"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-cocoa px-5 py-2.5 text-[13.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
               >
-                <Instagram className="h-4 w-4" /> Instagram
+                <TikTok className="h-4 w-4" /> TikTok
               </a>
               <a
                 href="https://facebook.com/grillmark"

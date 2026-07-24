@@ -38,7 +38,7 @@ export default function ProductsPage() {
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">
-        <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto max-w-[1080px] max-[560px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
               <span className="mr-2 inline-block h-2 w-2 rounded-full bg-ember align-middle" />
@@ -57,7 +57,7 @@ export default function ProductsPage() {
           <Reveal
             as="p"
             delay={120}
-            className="mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
+            className="mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[560px]:mx-auto"
           >
             Every link is sold <strong className="text-ink">raw and ready</strong>{" "}
             — premium cuts, signature spice, and the grill left to you.

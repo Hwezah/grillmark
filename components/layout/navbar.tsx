@@ -100,8 +100,9 @@ export function Navbar() {
           })}
         </div>
 
-        {/* Center — logo */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* Logo — centred on desktop, pinned to the extreme left on mobile
+            (where the inline links are hidden). */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-[920px]:static max-[920px]:mr-auto max-[920px]:translate-x-0 max-[920px]:translate-y-0">
           <Logo priority variant={onDark ? "cream" : "ink"} />
         </div>
 

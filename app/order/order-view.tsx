@@ -204,7 +204,7 @@ export function OrderView() {
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
-        <div className="mx-auto max-w-[880px]">
+        <div className="mx-auto max-w-[880px] max-[560px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
               <span className="mr-2 inline-block h-2 w-2 rounded-full bg-ember align-middle" />
@@ -221,7 +221,7 @@ export function OrderView() {
           <Reveal
             as="p"
             delay={120}
-            className="mt-5 max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
+            className="mt-5 max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[560px]:mx-auto"
           >
             Pick what you want, add the details, and we&apos;ll open WhatsApp
             with your order written out — ready to send.
