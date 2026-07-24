@@ -12,6 +12,10 @@ import {
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
+import {
+  CurveDividers,
+  type CurveEntry,
+} from "@/components/curve-dividers";
 
 export const metadata: Metadata = {
   title: "Recipes",
@@ -107,9 +111,16 @@ const TIMES = [
   { value: "3 min", label: "Rest & serve" },
 ];
 
+const CURVES: CurveEntry[] = [
+  { label: "RecipeBox", from: "#FBF6EE", to: "#F5EDE0" },
+  { label: "ProTips", from: "#F5EDE0", to: "#200d0a" },
+  { label: "Times", from: "#200d0a", to: "#FFFFFF" },
+];
+
 export default function RecipesPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+      <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
         <div className="mx-auto max-w-[880px]">
@@ -180,7 +191,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ----------------------------- RECIPE BOX ----------------------------- */}
-      <section className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="RecipeBox" className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,52px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>The recipe box</div>
@@ -218,7 +229,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ------------------------------ PRO TIPS ------------------------------ */}
-      <section className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="ProTips" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <Image
           src="/images/logo-cream.png"
           alt=""
@@ -257,7 +268,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ------------------------------- TIMES -------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
+      <section data-screen-label="Times" className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-4 gap-[clamp(18px,2vw,32px)] max-[720px]:grid-cols-2 max-[720px]:gap-y-[38px]">
           {TIMES.map((s, i) => (
             <Reveal key={s.label} delay={i * 70} className="text-center">

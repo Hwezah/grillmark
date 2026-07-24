@@ -3,6 +3,10 @@ import { ArrowRight } from "lucide-react";
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
+import {
+  CurveDividers,
+  type CurveEntry,
+} from "@/components/curve-dividers";
 import { SketchReveal } from "@/components/sketch-reveal";
 import { RangeGrid } from "@/components/range-grid";
 import { GrillBoxBuilder } from "@/components/grill-box-builder";
@@ -35,9 +39,17 @@ const STEPS = [
   },
 ];
 
+const CURVES: CurveEntry[] = [
+  { label: "BoxBuilder", from: "#FBF6EE", to: "#F5EDE0" },
+  { label: "Finder", from: "#F5EDE0", to: "#EFECE5" },
+  { label: "Steps", from: "#EFECE5", to: "#200d0a" },
+  { label: "FireItUp", from: "#200d0a", to: "#EFECE5" },
+];
+
 export default function ProductsPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+      <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">
         <div className="mx-auto max-w-[1080px] max-[560px]:text-center">
@@ -76,7 +88,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ---------------------------- BOX BUILDER ---------------------------- */}
-      <section className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="BoxBuilder" className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,56px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>Mix your own · Save 10%</div>
@@ -97,7 +109,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------ FINDER ------------------------------ */}
-      <section className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="Finder" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(30px,3.5vw,44px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>Not sure where to start?</div>
@@ -113,7 +125,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------- STEPS ------------------------------- */}
-      <section className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="Steps" className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-3 gap-[clamp(24px,3vw,48px)] max-[760px]:grid-cols-1">
           {STEPS.map((s, i) => (
             <Reveal key={s.num} delay={i * 90}>
@@ -132,7 +144,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------ FIRE IT UP ---------------------------- */}
-      <section className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
+      <section data-screen-label="FireItUp" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
         <Reveal className="mx-auto max-w-[640px]">
           <h2 className="m-0 font-hanken text-[clamp(34px,5vw,64px)] font-extrabold uppercase leading-[0.98] tracking-[-0.025em] text-ink">
             Fire it up
