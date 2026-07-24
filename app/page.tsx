@@ -80,18 +80,19 @@ export default function HomePage() {
       <section className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[1.05fr_0.95fr] items-center gap-[clamp(28px,4.5vw,72px)] max-[880px]:grid-cols-1">
           <Reveal className="relative">
-            <span className="absolute left-[6%] top-[-2%] z-10 -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink max-[880px]:static max-[880px]:ml-[6%] max-[880px]:inline-block max-[880px]:text-[17px]">
+            <span className="ml-[6%] inline-block -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink max-[880px]:text-[17px]">
               Made from <span className="text-ember">100%</span>
               <br />
               organic meat
             </span>
+            {/* Doodle sits tight under the label, then clear air before the herd. */}
             <SketchReveal
               src="/images/doodle-arrow.png"
               width={675}
               height={439}
-              className="pointer-events-none absolute left-[8%] top-[8%] z-10 w-[42%] max-w-[210px] max-[880px]:static max-[880px]:ml-[16%] max-[880px]:mt-3 max-[880px]:w-[46%]"
+              className="pointer-events-none ml-[13%] mt-1 w-[42%] max-w-[210px] max-[880px]:ml-[16%] max-[880px]:mt-2 max-[880px]:w-[46%]"
             />
-            <div className="relative aspect-[1100/583] w-full max-[880px]:mt-4">
+            <div className="relative mt-7 aspect-[1100/583] w-full max-[880px]:mt-8">
               <Image
                 src="/images/story-bulls.webp"
                 alt="Three bulls — the beef heritage behind GrillMark"
