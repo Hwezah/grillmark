@@ -94,9 +94,14 @@ const config: Config = {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        // Keeps the -translate-x/y-1/2 centering — the animated transform
+        // fully replaces the utility classes' transform while it fills.
         "panel-in": {
-          from: { opacity: "0", transform: "translateY(10px) scale(.965)" },
-          to: { opacity: "1", transform: "translateY(0) scale(1)" },
+          from: {
+            opacity: "0",
+            transform: "translate(-50%, -48%) scale(.965)",
+          },
+          to: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
         },
       },
       animation: {
