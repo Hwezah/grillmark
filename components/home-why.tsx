@@ -1,16 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import gsap from "gsap";
 import { ArrowRight, Check } from "lucide-react";
 
-const Sparkles = dynamic(
-  () => import("@/components/sparkles").then((m) => m.Sparkles),
-  { ssr: false }
-);
+import { DeferredSparkles } from "@/components/deferred-sparkles";
 
 // Card set and placement from the reference recording: two hugging the
 // plate's shoulders, two at its lower rim.
@@ -38,47 +33,23 @@ const NOTES = [
 ];
 
 /**
- * "Why GrillMark" plate scene: bubbles popping around the plate (Three.js),
- * GSAP floating the annotation cards and gently bobbing the plate.
+ * "Why GrillMark" plate scene: bubbles popping around the plate (Three.js,
+ * loaded after first paint) with the annotation cards and plate drifting on
+ * CSS keyframes — see globals.css `gm-float-*` / `gm-plate-bob`.
  */
 export function HomeWhy() {
-  const scope = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>("[data-float]").forEach((el, i) => {
-        gsap.to(el, {
-          y: i % 2 ? 10 : -10,
-          duration: 2.6 + i * 0.35,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
-        });
-      });
-      gsap.to("[data-plate]", {
-        y: -12,
-        duration: 3.4,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-    }, scope);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div ref={scope} className="relative mx-auto max-w-[900px]">
+    <div className="relative mx-auto max-w-[900px]">
       <div className="relative mx-auto w-[min(74vw,480px)] max-[900px]:w-[min(88vw,420px)]">
         {/* Bubbles popping around the plate */}
-        <Sparkles
+        <DeferredSparkles
           mode="pop"
           count={16}
           sizeRange={[0.06, 0.4]}
           speed={1}
           className="pointer-events-none absolute -inset-[24%]"
         />
-        <div data-plate className="relative aspect-square">
+        <div className="gm-plate-bob relative aspect-square">
           <Image
             src="/images/plate-sausages.png"
             alt="A plate of grilled GrillMark sausages with asparagus, potatoes and cherry tomatoes"
@@ -91,11 +62,11 @@ export function HomeWhy() {
 
       {/* Floating annotation cards — absolute on desktop, stacked on mobile */}
       <div className="max-[900px]:mt-7 max-[900px]:grid max-[900px]:gap-3">
-        {NOTES.map((note) => (
+        {NOTES.map((note, i) => (
           <div
             key={note.title}
-            data-float
-            className={`absolute z-10 w-[230px] rounded-[16px] bg-white p-4 shadow-[0_22px_44px_-24px_rgba(32,13,10,0.4)] max-[900px]:w-full ${note.className}`}
+            style={{ "--gm-dur": `${(2.6 + i * 0.35) * 2}s` } as CSSProperties}
+            className={`${i % 2 ? "gm-float-down" : "gm-float-up"} absolute z-10 w-[230px] rounded-[16px] bg-white p-4 shadow-[0_22px_44px_-24px_rgba(32,13,10,0.4)] max-[900px]:w-full ${note.className}`}
           >
             <div className="flex items-start gap-3">
               <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand">

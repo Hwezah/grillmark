@@ -101,3 +101,57 @@
     }
   }
 }
+
+/* Hero entrance + idle floating. These replace the GSAP timelines they were
+   ported from — same motion, no runtime animation library on the home route.
+   power3.out maps to the easeOutCubic curve below, and a GSAP yoyo repeat is
+   a full cycle of twice its stated duration. */
+@layer utilities {
+  @keyframes gm-hero-logo {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes gm-hero-item {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes gm-float-up {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+
+  @keyframes gm-float-down {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(10px); }
+  }
+
+  @keyframes gm-plate-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  .gm-hero-logo {
+    animation: gm-hero-logo 1.1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .gm-hero-item {
+    animation: gm-hero-item 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation-delay: var(--gm-delay, 0s);
+  }
+
+  .gm-float-up   { animation: gm-float-up   var(--gm-dur, 5.2s) ease-in-out infinite; }
+  .gm-float-down { animation: gm-float-down var(--gm-dur, 5.2s) ease-in-out infinite; }
+  .gm-plate-bob  { animation: gm-plate-bob  6.8s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gm-hero-logo,
+    .gm-hero-item,
+    .gm-float-up,
+    .gm-float-down,
+    .gm-plate-bob {
+      animation: none;
+    }
+  }
+}
