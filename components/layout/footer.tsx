@@ -9,9 +9,9 @@ export function Footer() {
   return (
     <footer className="bg-cocoa px-[clamp(18px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-2">
+        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1">
           {/* Brand */}
-          <div className="max-[620px]:col-span-2">
+          <div className="max-[620px]:order-1">
             <Image
               src="/images/logo-cream.png"
               alt="GrillMark"
@@ -28,11 +28,11 @@ export function Footer() {
             >
               {BRAND.site}
             </a>
-            <p className="m-0 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E]">
+            <p className="m-0 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:max-w-none">
               Premium sausages &amp; franks, sold raw and ready. Marked by
               flavour — crafted by {BRAND.company} in Ntinda, Kampala.
             </p>
-            <p className="mt-1.5 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E]">
+            <p className="mt-1.5 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:max-w-none">
               <span className="mr-2 font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
                 Visit:
               </span>
@@ -40,12 +40,12 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Contact — sits between the brand block and Explore */}
-          <div>
+          {/* Contact — third row on mobile portrait, 2 columns x 2 rows */}
+          <div className="max-[620px]:order-3">
             <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
               Get in touch
             </div>
-            <div className="flex flex-col gap-3 text-[15px]">
+            <div className="flex flex-col gap-3 text-[15px] max-[620px]:grid max-[620px]:grid-cols-2 max-[620px]:gap-x-4 max-[620px]:gap-y-3.5 max-[359px]:grid-cols-1">
               <a
                 href={WA_MAIN}
                 target="_blank"
@@ -75,12 +75,12 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Explore */}
-          <div>
+          {/* Explore — second row on mobile portrait, 3 columns x 2 rows */}
+          <div className="max-[620px]:order-2">
             <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
               Explore
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 max-[620px]:grid max-[620px]:grid-cols-3 max-[620px]:gap-x-4 max-[620px]:gap-y-3.5 max-[359px]:grid-cols-2">
               {NAV_LINKS.map((l) => (
                 <Link
                   key={l.label}
