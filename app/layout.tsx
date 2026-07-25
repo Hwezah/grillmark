@@ -54,6 +54,21 @@ export default function RootLayout({
       lang="en"
       className={`${hanken.variable} ${spaceMono.variable} ${anton.variable}`}
     >
+      <head>
+        {/*
+          Arms the scroll-reveal hidden states before first paint, and disarms
+          them again if the app never hydrates (blocked bundle, offline copy),
+          so a JS failure can't leave whole sections sitting at opacity 0.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('gm-js');" +
+              "setTimeout(function(){if(!window.__gmReady)" +
+              "document.documentElement.classList.remove('gm-js');},4000);",
+          }}
+        />
+      </head>
       <body>
         <Providers>
           <Navbar />

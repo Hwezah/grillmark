@@ -33,6 +33,10 @@ export function Reveal({
   const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    // Tells the head script the app hydrated, so it leaves the reveal
+    // states armed rather than disarming them as a failure fallback.
+    (window as Window & { __gmReady?: boolean }).__gmReady = true;
+
     const el = ref.current;
     if (!el) return;
 
