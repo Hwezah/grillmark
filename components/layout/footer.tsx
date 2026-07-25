@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-cocoa px-[clamp(18px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1">
+        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1 max-[620px]:text-center">
           {/* Brand */}
           <div className="max-[620px]:order-1">
             <Image
@@ -17,7 +17,7 @@ export function Footer() {
               alt="GrillMark"
               width={220}
               height={189}
-              className="mb-5 h-[84px] w-auto"
+              className="mb-5 h-[84px] w-auto max-[620px]:mx-auto"
             />
             <span className="sr-only">GrillMark — {BRAND.tagline}</span>
             <a
@@ -94,7 +94,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 pt-[26px] font-mono text-[11.5px] tracking-[0.06em] text-[#8a6a5c]">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 pt-[26px] font-mono text-[11.5px] tracking-[0.06em] text-[#8a6a5c] max-[620px]:justify-center max-[620px]:text-center">
           <span>
             © {year} {BRAND.company} · GrillMark
           </span>
