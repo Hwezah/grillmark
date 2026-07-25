@@ -389,7 +389,9 @@ export function OrderView() {
           <div className="mb-5 font-mono text-[12px] uppercase tracking-[0.14em] text-clay-700">
             Reach us directly
           </div>
-          <div className="grid gap-4">
+          {/* Column-first fill puts the two phone lines in one column and
+              the email + street address in the other. */}
+          <div className="grid gap-4 min-[720px]:grid-flow-col min-[720px]:grid-rows-2 min-[720px]:gap-x-10">
             {[
               {
                 Icon: MessageCircle,
@@ -418,10 +420,18 @@ export function OrderView() {
                 label: "Find us",
                 value: BRAND.location,
               },
-            ].map(({ Icon, color, label, value, href }) => (
+            ].map(({ Icon, color, label, value, href }, i) => (
               <div
                 key={label}
-                className="flex items-center gap-4 border-b border-ink/[0.06] pb-4 last:border-b-0 last:pb-0"
+                className={cn(
+                  "flex items-center gap-4 pb-4",
+                  i < 3 && "border-b border-ink/[0.06]",
+                  i === 3 && "pb-0",
+                  // side by side, only the first row carries a divider
+                  i % 2 === 0
+                    ? "min-[720px]:border-b min-[720px]:border-ink/[0.06] min-[720px]:pb-4"
+                    : "min-[720px]:border-b-0 min-[720px]:pb-0"
+                )}
               >
                 <Icon className="h-6 w-6 shrink-0" style={{ color }} strokeWidth={1.8} />
                 <div>
