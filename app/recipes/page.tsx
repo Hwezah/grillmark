@@ -239,13 +239,13 @@ export default function RecipesPage() {
           className="pointer-events-none absolute -right-24 -top-16 w-[clamp(280px,32vw,480px)] opacity-[0.05]"
         />
         <div className="relative mx-auto max-w-[1080px]">
-          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
+          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan max-[1020px]:text-center">
             Pro tips
           </Reveal>
           <Reveal
             as="h2"
             delay={60}
-            className="m-0 mb-[clamp(36px,4.5vw,56px)] font-hanken text-[clamp(30px,4.4vw,58px)] font-semibold uppercase leading-[1.02] tracking-[-0.025em] text-[#F7EFE2]"
+            className="m-0 mb-[clamp(36px,4.5vw,56px)] font-hanken text-[clamp(30px,4.4vw,58px)] font-semibold uppercase leading-[1.02] tracking-[-0.025em] text-[#F7EFE2] max-[1020px]:text-center"
           >
             Grill it like we would
           </Reveal>
