@@ -150,7 +150,7 @@ export default function AboutPage() {
       {/* ------------------------------- STORY ------------------------------ */}
       <section className="bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,116px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[0.85fr_1.15fr] items-start gap-[clamp(30px,5vw,76px)] max-[920px]:grid-cols-1">
-          <Reveal className="sticky top-[110px] max-[920px]:static">
+          <Reveal className="sticky top-[110px] max-[920px]:static max-[920px]:text-center">
             <div className={`${eyebrow} mb-4`}>From Ntinda, with fire</div>
             <h2 className="m-0 font-hanken text-[clamp(30px,3.6vw,52px)] font-semibold uppercase leading-[1.04] tracking-[-0.025em] text-ink">
               It started with one good link
@@ -202,7 +202,7 @@ export default function AboutPage() {
           <Reveal
             as="h2"
             delay={80}
-            className="m-0 mb-[clamp(40px,5vw,64px)] max-w-[760px] font-hanken text-[clamp(32px,4.6vw,62px)] font-semibold uppercase leading-none tracking-[-0.025em] text-[#F7EFE2]"
+            className="m-0 mb-[clamp(40px,5vw,64px)] max-w-[760px] font-hanken text-[clamp(32px,4.6vw,62px)] font-semibold uppercase leading-none tracking-[-0.025em] text-[#F7EFE2] max-[1020px]:mx-auto max-[1020px]:text-center"
           >
             No shortcuts, no apologies
           </Reveal>

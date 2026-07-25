@@ -119,18 +119,18 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal delay={100} className="max-[880px]:text-center">
             <div className={`${eyebrow} mb-4`}>Our story</div>
             <h2 className="m-0 font-hanken text-[clamp(28px,3.4vw,44px)] font-bold uppercase leading-[1.06] tracking-[-0.02em]">
               A mark you can taste
             </h2>
-            <p className="mt-5 max-w-[480px] text-[15.5px] leading-[1.72] text-clay-700">
+            <p className="mt-5 max-w-[480px] text-[15.5px] leading-[1.72] text-clay-700 max-[880px]:mx-auto">
               GrillMark began in a small kitchen in Ntinda with one stubborn
               belief — that a sausage should taste of the meat inside it, not
               the fillers around it. So we built our own blends, sourced honest
               cuts, and left the rest out.
             </p>
-            <p className="mt-4 max-w-[480px] text-[15.5px] leading-[1.72] text-clay-700">
+            <p className="mt-4 max-w-[480px] text-[15.5px] leading-[1.72] text-clay-700 max-[880px]:mx-auto">
               Every link leaves us <strong className="text-ink">raw and ready</strong>{" "}
               — so the final mark is yours to make on the grill. We just make
               sure flavour gets there first.
@@ -148,7 +148,7 @@ export default function HomePage() {
       {/* ------------------------------- RANGE ------------------------------- */}
       <section data-screen-label="Range" className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
-          <div className="mb-[clamp(30px,4vw,48px)] flex items-end justify-between gap-6 max-[620px]:flex-col max-[620px]:items-center max-[620px]:text-center">
+          <div className="mb-[clamp(30px,4vw,48px)] flex items-end justify-between gap-6 max-[880px]:flex-col max-[880px]:items-center max-[880px]:text-center">
             <Reveal>
               <div className={`${eyebrow} mb-3`}>The range</div>
               <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,48px)] font-bold uppercase leading-[1.04] tracking-[-0.02em]">
@@ -206,13 +206,13 @@ export default function HomePage() {
           className="pointer-events-none absolute -bottom-24 -right-20 w-[clamp(280px,30vw,460px)] opacity-[0.06]"
         />
         <div className="relative mx-auto max-w-[1180px]">
-          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan max-[560px]:text-center">
+          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan max-[880px]:text-center">
             Why GrillMark
           </Reveal>
           <Reveal
             as="h2"
             delay={60}
-            className="m-0 mb-[clamp(32px,4vw,48px)] max-w-[640px] font-hanken text-[clamp(28px,3.8vw,52px)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-[#F7EFE2] max-[560px]:mx-auto max-[560px]:text-center"
+            className="m-0 mb-[clamp(32px,4vw,48px)] max-w-[640px] font-hanken text-[clamp(28px,3.8vw,52px)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-[#F7EFE2] max-[880px]:mx-auto max-[880px]:text-center"
           >
             Raw on arrival.
             <br />
@@ -343,8 +343,8 @@ export default function HomePage() {
       {/* ------------------------------- SOCIAL ------------------------------- */}
       <section data-screen-label="Social" className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
-          <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[720px]:flex-col max-[720px]:items-center max-[720px]:text-center">
-            <Reveal className="max-[720px]:w-full">
+          <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[880px]:flex-col max-[880px]:items-center max-[880px]:text-center">
+            <Reveal className="max-[880px]:w-full">
               <div className={`${eyebrow} mb-3`}>
                 @grillmark · Follow the flavour
               </div>
@@ -402,14 +402,14 @@ export default function HomePage() {
       {/* ----------------------------- NEWSLETTER ----------------------------- */}
       <section data-screen-label="Newsletter" className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,88px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[1fr_1.1fr] items-center gap-[clamp(28px,4vw,64px)] max-[880px]:grid-cols-1">
-          <Reveal>
+          <Reveal className="max-[880px]:text-center">
             <div className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
               Join the grill list
             </div>
             <h2 className="m-0 font-hanken text-[clamp(24px,2.8vw,38px)] font-bold uppercase leading-[1.1] tracking-[-0.015em] text-[#F7EFE2]">
               Flavour, straight to your inbox
             </h2>
-            <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.68] text-[#CDB6A8]">
+            <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.68] text-[#CDB6A8] max-[880px]:mx-auto">
               New product drops, recipes and cooking ideas, seasonal promotions
               and holiday specials — no spam, just the good stuff.
             </p>

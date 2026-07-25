@@ -185,7 +185,7 @@ export default function CareersPage() {
       {/* ----------------------------- HOW TO APPLY ---------------------------- */}
       <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(64px,8vw,104px)]">
         <div className="mx-auto max-w-[880px]">
-          <Reveal>
+          <Reveal className="max-[1020px]:text-center">
             <div className={`${eyebrow} mb-4`}>Getting hired</div>
             <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,48px)] font-semibold uppercase leading-[1.05] tracking-[-0.02em]">
               How to apply
@@ -228,13 +228,13 @@ export default function CareersPage() {
           className="pointer-events-none absolute -right-24 -top-16 w-[clamp(280px,32vw,480px)] opacity-[0.05]"
         />
         <div className="relative mx-auto max-w-[1080px]">
-          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
+          <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan max-[1020px]:text-center">
             Now hiring
           </Reveal>
           <Reveal
             as="h2"
             delay={60}
-            className="m-0 mb-[clamp(32px,4vw,48px)] font-hanken text-[clamp(32px,4.6vw,60px)] font-semibold uppercase leading-none tracking-[-0.025em] text-[#F7EFE2]"
+            className="m-0 mb-[clamp(32px,4vw,48px)] font-hanken text-[clamp(32px,4.6vw,60px)] font-semibold uppercase leading-none tracking-[-0.025em] text-[#F7EFE2] max-[1020px]:text-center"
           >
             Open roles
           </Reveal>

@@ -215,7 +215,7 @@ export function OrderView() {
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
-        <div className="mx-auto max-w-[880px] max-[560px]:text-center">
+        <div className="mx-auto max-w-[880px] max-[880px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
               <span className="mr-2 inline-block h-2 w-2 rounded-full bg-ember align-middle" />
@@ -232,7 +232,7 @@ export function OrderView() {
           <Reveal
             as="p"
             delay={120}
-            className="mt-5 max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[560px]:mx-auto"
+            className="mt-5 max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[880px]:mx-auto"
           >
             Pick what you want, add the details, and we&apos;ll open WhatsApp
             with your order written out — ready to send.
@@ -532,7 +532,7 @@ export function OrderView() {
       {/* ----------------------------- WHOLESALE ----------------------------- */}
       <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[1fr_1.05fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
-          <div>
+          <div className="max-[900px]:text-center">
             <Reveal className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
               For business · B2B
             </Reveal>
@@ -548,7 +548,7 @@ export function OrderView() {
             <Reveal
               as="p"
               delay={110}
-              className="mt-5 max-w-[460px] text-[15.5px] leading-[1.7] text-[#CDB6A8]"
+              className="mt-5 max-w-[460px] text-[15.5px] leading-[1.7] text-[#CDB6A8] max-[900px]:mx-auto"
             >
               We supply restaurants, hotels, cafés, caterers and supermarkets
               with premium sausages and franks at wholesale rates — packed cold
@@ -622,7 +622,7 @@ export function OrderView() {
       {/* -------------------------------- FAQ -------------------------------- */}
       <section data-screen-label="Faq" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[0.9fr_1.1fr] gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
-          <div>
+          <div className="max-[900px]:text-center">
             <Reveal className={`${eyebrow} mb-4`}>Good to know</Reveal>
             <Reveal
               as="h2"

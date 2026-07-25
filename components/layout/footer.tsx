@@ -9,9 +9,9 @@ export function Footer() {
   return (
     <footer className="bg-cocoa px-[clamp(18px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1">
+        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-2">
           {/* Brand */}
-          <div>
+          <div className="max-[620px]:col-span-2">
             <Image
               src="/images/logo-cream.png"
               alt="GrillMark"
