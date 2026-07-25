@@ -201,8 +201,8 @@ export default function HomePage() {
           src="/images/logo-cream.png"
           alt=""
           aria-hidden
-          width={560}
-          height={482}
+          width={300}
+          height={258}
           className="pointer-events-none absolute -bottom-24 -right-20 w-[clamp(280px,30vw,460px)] opacity-[0.06]"
         />
         <div className="relative mx-auto max-w-[1180px]">

@@ -234,8 +234,8 @@ export default function RecipesPage() {
           src="/images/logo-cream.png"
           alt=""
           aria-hidden
-          width={560}
-          height={482}
+          width={300}
+          height={258}
           className="pointer-events-none absolute -right-24 -top-16 w-[clamp(280px,32vw,480px)] opacity-[0.05]"
         />
         <div className="relative mx-auto max-w-[1080px]">
