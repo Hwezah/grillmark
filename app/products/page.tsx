@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { WA_MAIN } from "@/lib/constants";
+import { PRODUCT_CATEGORIES, WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
 import {
   CurveDividers,
@@ -15,7 +16,7 @@ import { PackFinder } from "@/components/pack-finder";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "The GrillMark range — beef and chicken sausages and franks, sold raw and ready, delivered cold across Kampala.",
+    "A growing world of GrillMark flavor. It begins with beef and chicken sausages and franks, prepared fresh and delivered cold across Kampala — with sauces, seasonings, marinades and more to come.",
 };
 
 const eyebrow =
@@ -73,9 +74,10 @@ export default function ProductsPage() {
             delay={120}
             className="mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700 max-[880px]:mx-auto"
           >
-            Every link is sold <strong className="text-ink">raw and ready</strong>{" "}
-            — premium cuts, signature spice, and the grill left to you.
-            Delivered cold across Kampala.
+            Our sausages and franks are the{" "}
+            <strong className="text-ink">first expression</strong> of the
+            GrillMark flavor philosophy — distinctive spice blends, prepared
+            fresh and delivered cold across Kampala.
           </Reveal>
         </div>
       </header>
@@ -84,6 +86,71 @@ export default function ProductsPage() {
       <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <RangeGrid />
+        </div>
+      </section>
+
+      {/* --------------------------- GROWING WORLD --------------------------- */}
+      <section className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)] pt-[clamp(8px,2vw,24px)]">
+        <div className="mx-auto max-w-[1080px]">
+          <Reveal className="mx-auto mb-[clamp(30px,4vw,48px)] max-w-[640px] text-center">
+            <div className={`${eyebrow} mb-4`}>A growing world of flavor</div>
+            <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,48px)] font-semibold uppercase leading-[1.05] tracking-[-0.02em] text-ink">
+              More to come
+            </h2>
+            <p className="mx-auto mt-4 max-w-[540px] text-[15.5px] leading-[1.7] text-clay-600">
+              GrillMark began with sausages, but our ambitions extend far beyond
+              one category. We are building a range of foods for everyday meals
+              and special occasions alike.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-3 gap-[clamp(14px,1.8vw,24px)] max-[880px]:grid-cols-2 max-[540px]:grid-cols-1">
+            {PRODUCT_CATEGORIES.map((c, i) => {
+              const available = c.status === "Available now";
+              return (
+                <Reveal
+                  key={c.name}
+                  delay={i * 70}
+                  className={`flex flex-col rounded-[20px] border p-6 ${
+                    available
+                      ? "border-brand/25 bg-cream-card"
+                      : "border-ink/[0.07] bg-cream-card"
+                  }`}
+                >
+                  <span
+                    className={`inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10.5px] uppercase tracking-[0.12em] ${
+                      available
+                        ? "bg-brand/12 text-brand"
+                        : "bg-ink/[0.06] text-clay"
+                    }`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        available ? "bg-brand" : "bg-clay/60"
+                      }`}
+                    />
+                    {c.status}
+                  </span>
+                  <h3 className="mb-2 mt-4 font-hanken text-[19px] font-bold text-ink">
+                    {c.name}
+                  </h3>
+                  <p className="m-0 text-[14.5px] leading-[1.62] text-clay-600">
+                    {c.blurb}
+                  </p>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          <Reveal className="mt-[clamp(28px,3.5vw,44px)] text-center">
+            <Link
+              href="/#collections"
+              className="inline-flex items-center gap-2.5 border-b-2 border-brand/30 pb-1 text-[15px] font-extrabold text-brand transition-colors hover:border-brand"
+            >
+              Explore our flavor collections{" "}
+              <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
+            </Link>
+          </Reveal>
         </div>
       </section>
 

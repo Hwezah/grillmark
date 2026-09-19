@@ -92,7 +92,7 @@ const FRAG = /* glsl */ `
 /**
  * Three.js sparkle field. Every spark is born crisp, travels, and fades out
  * over its own lifetime — in assorted sizes. `drift` scatters glowing embers
- * across the home hero; `pop` blooms solid dots around the flavour plate.
+ * across the home hero; `pop` blooms solid dots around the flavor plate.
  */
 export function Sparkles({
   mode = "drift",

@@ -28,13 +28,13 @@ export function HomeHero() {
           data-hero-item
           className="gm-hero-item m-0 mb-7 font-mono text-[12.5px] uppercase tracking-[0.2em] text-tan"
         >
-          Salvation Foods · Ntinda, Kampala
+          A food brand by Salvation Foods · Made in Uganda
         </p>
 
         <div data-hero-logo className="gm-hero-logo">
           <Image
             src="/images/logo-cream.png"
-            alt="GrillMark — Marked by Flavour · Taste & See"
+            alt="GrillMark — Marked by Flavor"
             width={740}
             height={637}
             priority
@@ -45,9 +45,10 @@ export function HomeHero() {
         <p
           data-hero-item
           style={{ "--gm-delay": "0.67s" } as React.CSSProperties}
-          className="gm-hero-item m-0 mt-8 max-w-[480px] text-[clamp(16px,1.4vw,19px)] leading-[1.6] text-cream-soft/90"
+          className="gm-hero-item m-0 mt-8 max-w-[500px] text-[clamp(16px,1.4vw,19px)] leading-[1.6] text-cream-soft/90"
         >
-          Premium sausages &amp; franks — sold raw, made to be grilled.
+          A food brand inspired by the possibilities of flavor — creating food
+          people remember.
         </p>
 
         <div
@@ -59,7 +60,7 @@ export function HomeHero() {
             href="/products"
             className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-brand px-8 py-[16px] text-[15px] font-extrabold text-white shadow-[0_18px_40px_-16px_rgba(226,79,2,0.65)] transition-transform hover:-translate-y-[3px]"
           >
-            Our Sausages and Franks <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
+            Explore GrillMark <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
           </Link>
           <Link
             href="/order#wholesale"

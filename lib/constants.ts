@@ -3,8 +3,11 @@
 export const BRAND = {
   name: "GrillMark",
   company: "Salvation Foods Ltd",
-  tagline: "Marked by Flavour",
-  taglineLong: "Marked by Flavour · Taste & See",
+  tagline: "Marked by Flavor",
+  taglineLong: "Marked by Flavor.",
+  /** How the brand describes itself in the footer / about copy. */
+  descriptor: "A food brand by Salvation Foods Ltd.",
+  origin: "Made in Uganda",
   location: "Ntinda · Kampala, Uganda",
   site: "www.grillmark.co.ug",
   siteUrl: "https://grillmark.co.ug",
@@ -221,12 +224,91 @@ export function buildOrderMessage(
   return waLink(parts.join("\n"));
 }
 
+/* --------------------------- brand storytelling --------------------------- */
+
+/**
+ * The four flavor collections that frame how GrillMark develops products.
+ * Copy from the refined brand direction.
+ */
+export const FLAVOR_COLLECTIONS = [
+  {
+    name: "Classic",
+    blurb:
+      "Timeless flavors, carefully balanced and made with the GrillMark touch.",
+  },
+  {
+    name: "Signature",
+    blurb:
+      "Distinctive GrillMark creations developed around memorable combinations of flavor.",
+  },
+  {
+    name: "Fruity",
+    blurb:
+      "The richness of savory food brought together with the freshness, sweetness and acidity of fruit.",
+  },
+  {
+    name: "African",
+    blurb:
+      "Flavors inspired by the ingredients, spices and culinary traditions of Africa.",
+  },
+] as const;
+
+/**
+ * The growing world of GrillMark foods. Sausages are packed today; the rest
+ * are on the roadmap ("And more to come."). No storefront wired to these yet.
+ */
+export const PRODUCT_CATEGORIES = [
+  {
+    name: "Sausages",
+    blurb: "Our first expression of the GrillMark flavor philosophy.",
+    status: "Available now",
+  },
+  {
+    name: "Sauces & Condiments",
+    blurb: "Created to complement food and add another dimension of flavor.",
+    status: "In development",
+  },
+  {
+    name: "Seasonings & Spice Blends",
+    blurb: "Bringing distinctive GrillMark flavors into the kitchen.",
+    status: "In development",
+  },
+  {
+    name: "Marinades & Pastes",
+    blurb:
+      "Developed to help transform everyday ingredients into flavorful meals.",
+    status: "In development",
+  },
+  {
+    name: "Convenient Foods",
+    blurb: "Thoughtfully made foods for modern, busy lifestyles.",
+    status: "In development",
+  },
+] as const;
+
 /** Primary nav — hrefs point at routes; pages not yet designed fall back to /. */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
-  { label: "Butcher Shop", href: "/about" },
+  { label: "Our Story", href: "/about" },
   { label: "Recipes", href: "/recipes" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/order" },
+] as const;
+
+/** Footer "Explore" column — mirrors the brand direction's site map. */
+export const EXPLORE_LINKS = [
+  { label: "Our Story", href: "/about" },
+  { label: "Our Vision", href: "/about#vision" },
+  { label: "Our Flavors", href: "/#collections" },
+  { label: "Products", href: "/products" },
+  { label: "Recipes", href: "/recipes" },
+  { label: "Contact", href: "/order" },
+] as const;
+
+/** Footer "Business" column — trade audiences from the brand direction. */
+export const BUSINESS_LINKS = [
+  { label: "Restaurants", href: "/order#wholesale" },
+  { label: "Retailers", href: "/order#wholesale" },
+  { label: "Wholesale", href: "/order#wholesale" },
 ] as const;

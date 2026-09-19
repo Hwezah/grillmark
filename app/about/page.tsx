@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Beef, Flame, FlaskConical, Snowflake } from "lucide-react";
+import { ArrowRight, Compass, FlaskConical, Globe, Sparkles } from "lucide-react";
 
 import { WA_MAIN } from "@/lib/constants";
 import { Reveal } from "@/components/reveal";
@@ -9,59 +9,60 @@ import { CurveDividers, type CurveEntry } from "@/components/curve-dividers";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "GrillMark makes honest sausages and franks in Ntinda, Kampala — real cuts, bold seasoning, no fillers. Marked by flavour. Taste & see.",
+    "GrillMark is a food brand by Salvation Foods Ltd, inspired by the possibilities of flavor. Starting in Uganda with sausages, and a vision for much further ahead. Marked by Flavor.",
 };
 
+// Our approach to flavor — four moves that shape every GrillMark product.
 const STEPS = [
   {
     num: "01",
-    Icon: Beef,
-    title: "Source the cut",
-    body: "We start with real, properly sourced meat — the kind that would make a good meal on its own.",
+    Icon: Compass,
+    title: "Explore",
+    body: "We explore ingredients, culinary traditions and combinations from near and far.",
   },
   {
     num: "02",
     Icon: FlaskConical,
-    title: "Blend & season",
-    body: "Spice blends built to be tasted, mixed in small batches until the flavour earns its mark.",
+    title: "Develop",
+    body: "We develop flavors with their own identity, each with a character of its own.",
   },
   {
     num: "03",
-    Icon: Flame,
-    title: "Smoke & cure",
-    body: "Slow-smoked over hardwood and cured for depth — the difference you taste in the first bite.",
+    Icon: Sparkles,
+    title: "Refine",
+    body: "Some flavors are familiar and refined — balanced and made with the GrillMark touch.",
   },
   {
     num: "04",
-    Icon: Snowflake,
-    title: "Raw & ready",
-    body: "Packed and kept cold to your door, raw and ready so the final mark on the grill is yours.",
+    Icon: Globe,
+    title: "Surprise",
+    body: "Others introduce combinations and influences that are a little less expected.",
   },
 ];
 
 const VALUES = [
   {
     num: "01",
-    title: "Honest cuts",
-    desc: "Real meat, properly sourced. If it would not make a good meal on its own, it does not go in the mix.",
+    title: "Thoughtfully made",
+    desc: "Every product is developed with care — enjoyable to eat and recognizable by its taste.",
   },
   {
     num: "02",
-    title: "Seasoned to taste",
-    desc: "Our spice blends are built to be noticed — the flavour that earns the GrillMark name on every link.",
+    title: "Distinctive by design",
+    desc: "Each creation has its own character, while remaining unmistakably GrillMark.",
   },
   {
     num: "03",
-    title: "Raw & respectful",
-    desc: "We hand you the link raw and the moment whole. The grill, the char and the timing stay yours.",
+    title: "Made to be remembered",
+    desc: "We build around one pursuit: creating food people remember and want to share.",
   },
 ];
 
 const STATS = [
-  { value: "100%", label: "Real cuts, no fillers" },
-  { value: "8", label: "Sausages & franks" },
-  { value: "Cold", label: "Chain to your door" },
-  { value: "Ntinda", label: "Made in Kampala" },
+  { value: "4", label: "Flavor collections" },
+  { value: "5", label: "Product categories & growing" },
+  { value: "Uganda", label: "Where the journey begins" },
+  { value: "More", label: "To come" },
 ];
 
 const CURVES: CurveEntry[] = [
@@ -90,32 +91,66 @@ export default function AboutPage() {
             delay={60}
             className="m-0 font-hanken text-[clamp(44px,7vw,98px)] font-extrabold uppercase leading-[0.94] tracking-[-0.03em] text-ink"
           >
-            A mark you
+            Marked
             <br />
-            can <span className="text-brand">taste</span>
+            by <span className="text-brand">flavor</span>
           </Reveal>
           <Reveal
             as="p"
             delay={120}
-            className="mx-auto mt-[26px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
+            className="mx-auto mt-[26px] max-w-[580px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
           >
-            We are a Kampala sausage and frank maker with one stubborn belief:
-            flavour should never be an afterthought. It is the whole point.
+            GrillMark is a food brand inspired by the possibilities of flavor.
+            We create foods with distinctive character — exploring ingredients,
+            recipes and culinary influences to bring something memorable to the
+            table.
           </Reveal>
         </div>
       </header>
 
-      {/* ------------------------------ PROCESS ----------------------------- */}
-      <section className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(20px,3vw,40px)] pt-[clamp(60px,7vw,104px)]">
+      {/* ------------------------------- VISION ----------------------------- */}
+      <section
+        id="vision"
+        className="scroll-mt-[120px] bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(48px,6vw,88px)]"
+      >
+        <div className="mx-auto max-w-[820px] text-center">
+          <Reveal>
+            <div className={`${eyebrow} mb-4`}>Our vision</div>
+            <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,50px)] font-semibold uppercase leading-[1.04] tracking-[-0.025em] text-ink">
+              A food brand known for flavor
+            </h2>
+          </Reveal>
+          <Reveal
+            delay={100}
+            className="mx-auto mt-[22px] flex max-w-[620px] flex-col gap-[18px] text-[clamp(15px,1.2vw,17px)] leading-[1.72] text-clay-700"
+          >
+            <p className="m-0">
+              We believe flavor has the power to transform an ordinary meal into
+              something worth remembering. Our vision is to build a food brand
+              with a distinctive approach to flavor — products that are
+              thoughtfully made, enjoyable to eat and recognizable by their
+              taste.
+            </p>
+            <p className="m-0">
+              Our journey begins with sausages and continues into a wider world
+              of foods, seasonings, sauces, marinades and other creations.
+              GrillMark is built for a world of flavor.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ------------------------------ APPROACH ---------------------------- */}
+      <section className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(20px,3vw,40px)] pt-[clamp(40px,5vw,72px)]">
         <div className="mx-auto max-w-[1180px]">
           <Reveal className="mx-auto mb-[clamp(40px,5vw,64px)] max-w-[680px] text-center">
-            <div className={`${eyebrow} mb-4`}>From cut to crate</div>
+            <div className={`${eyebrow} mb-4`}>Our approach to flavor</div>
             <h2 className="m-0 font-hanken text-[clamp(30px,3.8vw,54px)] font-semibold uppercase leading-[1.04] tracking-[-0.025em] text-ink">
-              How we make the mark
+              Distinctive by design
             </h2>
             <p className="mx-auto mt-[18px] max-w-[520px] text-[clamp(15px,1.2vw,17px)] leading-[1.7] text-clay-600">
-              Four steps, no shortcuts. Every link earns its flavour before it
-              ever reaches your grill.
+              Flavor is at the heart of everything we create. Here is how a
+              GrillMark flavor comes to life.
             </p>
           </Reveal>
           <div className="grid grid-cols-4 gap-[clamp(16px,2vw,28px)] max-[1060px]:grid-cols-2 max-[620px]:grid-cols-1">
@@ -151,9 +186,9 @@ export default function AboutPage() {
       <section className="bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,116px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[0.85fr_1.15fr] items-start gap-[clamp(30px,5vw,76px)] max-[920px]:grid-cols-1">
           <Reveal className="sticky top-[110px] max-[920px]:static max-[920px]:text-center">
-            <div className={`${eyebrow} mb-4`}>From Ntinda, with fire</div>
+            <div className={`${eyebrow} mb-4`}>The GrillMark story</div>
             <h2 className="m-0 font-hanken text-[clamp(30px,3.6vw,52px)] font-semibold uppercase leading-[1.04] tracking-[-0.025em] text-ink">
-              It started with one good link
+              It began with better food
             </h2>
           </Reveal>
           <Reveal
@@ -161,30 +196,26 @@ export default function AboutPage() {
             className="flex flex-col gap-[22px] text-[clamp(16px,1.25vw,18px)] leading-[1.72] text-clay-800"
           >
             <p className="m-0">
-              GrillMark began in a small kitchen in Ntinda, with a grill, a
-              handful of spice jars, and a frustration: too many sausages tasted
-              of everything except the meat inside them. So we set out to make
-              the opposite — links built on honest cuts and seasoning you could
-              actually taste.
+              GrillMark was founded with a simple ambition: to create food with
+              character and flavor that people would be proud to serve and happy
+              to share. Our first products gave us the opportunity to understand
+              what people enjoy, refine our recipes and begin developing the
+              standards that guide the brand.
             </p>
             <p className="m-0">
-              We tested blend after blend on friends and family until a sausage
-              came off the grill and the room went quiet. That was the mark we
-              had been chasing — the{" "}
-              <strong className="text-ink">GrillMark</strong>. Today, under
-              Salvation Foods Ltd, we make sausages and franks the same honest
-              way, just for more tables.
+              Today, we are continuing to build on that foundation. Every new
+              product gives us another opportunity to explore flavor, create
+              something distinctive and add another mark to the{" "}
+              <strong className="text-ink">GrillMark</strong> story.
             </p>
             <p className="m-0">
-              Everything we make leaves us{" "}
-              <strong className="text-ink">raw and ready</strong>. We believe
-              the best part of a great sausage is the moment you cook it — the
-              smoke, the snap, the timing that is yours alone. We get the flavour
-              right. You make the final mark.
+              We are <strong className="text-ink">starting in Uganda</strong>,
+              with a vision for much further ahead — from our flagship sausages
+              to the foods and flavors we will introduce in the years to come.
             </p>
             <p className="mt-3.5 font-hanken text-[clamp(19px,1.7vw,25px)] font-medium italic leading-[1.5] text-ember">
-              &ldquo;Marked by Flavour. Taste &amp; See — we never wanted a
-              tagline you had to take on faith.&rdquo;
+              &ldquo;Flavor gives food its identity — it creates memories,
+              shapes experiences and brings people together.&rdquo;
             </p>
           </Reveal>
         </div>
@@ -197,14 +228,14 @@ export default function AboutPage() {
       >
         <div className="relative mx-auto max-w-[1180px]">
           <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
-            What we stand on
+            What we stand for
           </Reveal>
           <Reveal
             as="h2"
             delay={80}
             className="m-0 mb-[clamp(40px,5vw,64px)] max-w-[760px] font-hanken text-[clamp(32px,4.6vw,62px)] font-semibold uppercase leading-none tracking-[-0.025em] text-[#F7EFE2] max-[1020px]:mx-auto max-[1020px]:text-center"
           >
-            No shortcuts, no apologies
+            Built around flavor
           </Reveal>
           <div className="grid grid-cols-3 gap-[clamp(20px,2.4vw,36px)] max-[760px]:grid-cols-1">
             {VALUES.map((v, i) => (
@@ -247,15 +278,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ---------------------------- WHAT'S AHEAD --------------------------- */}
+      <section className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,104px)]">
+        <div className="mx-auto max-w-[820px] text-center">
+          <Reveal>
+            <div className={`${eyebrow} mb-4`}>What&apos;s ahead</div>
+            <h2 className="m-0 font-hanken text-[clamp(28px,3.6vw,50px)] font-semibold uppercase leading-[1.04] tracking-[-0.025em] text-ink">
+              There is a lot more to GrillMark
+            </h2>
+          </Reveal>
+          <Reveal
+            delay={100}
+            className="mx-auto mt-[22px] max-w-[620px] text-[clamp(15px,1.2vw,17px)] leading-[1.72] text-clay-700"
+          >
+            <p className="m-0">
+              As the brand grows, so will our range of foods. New recipes, new
+              ingredients, new combinations, new ways to enjoy familiar foods —
+              and entirely new ideas. Our ambition is a food brand people
+              associate with distinctive flavor, thoughtful products and the
+              excitement of discovering something new.
+            </p>
+          </Reveal>
+          <Reveal delay={160} className="mt-7">
+            <span className="font-hanken text-[clamp(18px,1.6vw,22px)] font-semibold italic text-ember">
+              The journey has begun.
+            </span>
+          </Reveal>
+        </div>
+      </section>
+
       {/* -------------------------------- CTA ------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(56px,7vw,104px)]">
+      <section className="bg-white px-[clamp(18px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(24px,3vw,48px)]">
         <Reveal className="mx-auto max-w-[1180px] rounded-[28px] bg-gradient-to-br from-brand to-brand-deep p-[clamp(40px,5vw,72px)] text-center text-cream-light">
           <h2 className="m-0 font-hanken text-[clamp(34px,5vw,72px)] font-semibold uppercase leading-[0.98] tracking-[-0.025em]">
-            Taste &amp; see for yourself
+            Bring more flavor to the table
           </h2>
           <p className="mx-auto mt-[18px] max-w-[480px] text-[clamp(15px,1.25vw,18px)] leading-[1.6] text-[#F6D8CF]">
-            The shortest way to understand GrillMark is to grill one. Order on
-            WhatsApp and judge us by the smoke.
+            Discover our products and find your own way to bring GrillMark to
+            the table. Message us on WhatsApp to get started.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3.5">
             <a
@@ -270,7 +330,7 @@ export default function AboutPage() {
               href="/products"
               className="inline-flex items-center gap-2.5 rounded-full border-[1.6px] border-cream-light/40 px-8 py-[17px] text-[15.5px] font-bold text-cream-light transition-colors hover:border-cream-light"
             >
-              See the range
+              Explore products
             </Link>
           </div>
         </Reveal>

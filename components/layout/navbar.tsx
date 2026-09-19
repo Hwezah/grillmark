@@ -13,10 +13,10 @@ import { Logo } from "@/components/layout/logo";
 
 // The four links shown inline in the bar (the full set lives in the menu).
 const BAR_LINKS = NAV_LINKS.filter((l) =>
-  ["Home", "Products", "Butcher Shop", "Contact"].includes(l.label)
+  ["Home", "Products", "Our Story", "Contact"].includes(l.label)
 );
 
-const POPULAR = ["Pork sausages", "Beef franks", "Smoked classics"];
+const POPULAR = ["Beef sausages", "Chicken franks", "Flavor collections"];
 
 export function Navbar() {
   const pathname = usePathname();

@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { BRAND, CONTACT, NAV_LINKS, WA_MAIN } from "@/lib/constants";
+import {
+  BRAND,
+  BUSINESS_LINKS,
+  CONTACT,
+  EXPLORE_LINKS,
+  WA_MAIN,
+} from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,9 +15,9 @@ export function Footer() {
   return (
     <footer className="bg-cocoa px-[clamp(18px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end gap-x-[clamp(28px,4vw,56px)] max-[620px]:items-start gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[620px]:grid-cols-1 max-[620px]:text-center">
+        <div className="grid grid-cols-[1.6fr_0.8fr_0.8fr_1fr] items-start gap-x-[clamp(24px,3.4vw,52px)] gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[860px]:grid-cols-2 max-[620px]:grid-cols-1 max-[620px]:text-center">
           {/* Brand */}
-          <div className="max-[620px]:order-1">
+          <div className="max-[860px]:col-span-2 max-[620px]:col-span-1 max-[620px]:order-1">
             <Image
               src="/images/logo-cream.png"
               alt="GrillMark"
@@ -28,11 +34,11 @@ export function Footer() {
             >
               {BRAND.site}
             </a>
-            <p className="m-0 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:max-w-none">
-              Premium sausages &amp; franks, sold raw and ready. Marked by
-              flavour — crafted by {BRAND.company} in Ntinda, Kampala.
+            <p className="m-0 max-w-[320px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:mx-auto max-[620px]:max-w-none">
+              A food brand inspired by the possibilities of flavor — creating
+              food people remember. {BRAND.descriptor} {BRAND.origin}.
             </p>
-            <p className="mt-1.5 max-w-[300px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:max-w-none">
+            <p className="mt-1.5 max-w-[320px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:mx-auto max-[620px]:max-w-none">
               <span className="mr-2 font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
                 Visit:
               </span>
@@ -40,12 +46,48 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Contact — third row on mobile portrait, 2 columns x 2 rows */}
+          {/* Explore */}
+          <div className="max-[620px]:order-2">
+            <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
+              Explore
+            </div>
+            <div className="flex flex-col gap-3 max-[620px]:items-center">
+              {EXPLORE_LINKS.map((l) => (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="text-[15px] font-medium text-[#E9D8CB] transition-colors hover:text-white"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Business */}
           <div className="max-[620px]:order-3">
+            <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
+              Business
+            </div>
+            <div className="flex flex-col gap-3 max-[620px]:items-center">
+              {BUSINESS_LINKS.map((l) => (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="text-[15px] font-medium text-[#E9D8CB] transition-colors hover:text-white"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="max-[620px]:order-4">
             <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
               Get in touch
             </div>
-            <div className="flex flex-col gap-3 text-[15px] max-[620px]:grid max-[620px]:grid-cols-2 max-[620px]:gap-x-4 max-[620px]:gap-y-3.5 max-[359px]:grid-cols-1">
+            <div className="flex flex-col gap-3 text-[15px] max-[620px]:items-center">
               <a
                 href={WA_MAIN}
                 target="_blank"
@@ -72,24 +114,6 @@ export function Footer() {
               >
                 {CONTACT.emailOrders}
               </a>
-            </div>
-          </div>
-
-          {/* Explore — second row on mobile portrait, 3 columns x 2 rows */}
-          <div className="max-[620px]:order-2">
-            <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
-              Explore
-            </div>
-            <div className="flex flex-col gap-3 max-[620px]:grid max-[620px]:grid-cols-3 max-[620px]:gap-x-4 max-[620px]:gap-y-3.5 max-[359px]:grid-cols-2">
-              {NAV_LINKS.map((l) => (
-                <Link
-                  key={l.label}
-                  href={l.href}
-                  className="text-[15px] font-medium text-[#E9D8CB] transition-colors hover:text-white"
-                >
-                  {l.label}
-                </Link>
-              ))}
             </div>
           </div>
         </div>

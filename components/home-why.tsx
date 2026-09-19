@@ -11,23 +11,23 @@ import { DeferredSparkles } from "@/components/deferred-sparkles";
 // plate's shoulders, two at its lower rim.
 const NOTES = [
   {
-    title: "Bold, honest flavour",
-    body: "Real smoke and spice in every link",
+    title: "Flavor comes first",
+    body: "It's at the heart of everything we create",
     className: "left-[3%] top-[7%] max-[900px]:static",
   },
   {
-    title: "No fillers, ever",
-    body: "Just clean meat and honest seasoning",
+    title: "Explored, not borrowed",
+    body: "Ingredients and traditions, combined our way",
     className: "right-[3%] top-[3%] max-[900px]:static",
   },
   {
-    title: "Grilled your way",
-    body: "Sold raw and ready for the fire",
+    title: "A character of its own",
+    body: "Every product has its own flavor identity",
     className: "left-[3%] top-[56%] max-[900px]:static",
   },
   {
-    title: "Made fresh in Ntinda",
-    body: "Cured and delivered cold to your door",
+    title: "Unmistakably GrillMark",
+    body: "Distinctive by design, yet always ours",
     className: "right-[3%] top-[62%] max-[900px]:static",
   },
 ];

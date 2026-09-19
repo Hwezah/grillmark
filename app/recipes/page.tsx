@@ -142,7 +142,7 @@ export default function RecipesPage() {
             delay={120}
             className="mx-auto mt-[22px] max-w-[560px] text-[clamp(16px,1.35vw,19px)] leading-[1.65] text-clay-700"
           >
-            We get the flavour right — you make the final mark on the grill, in
+            We get the flavor right — you make the final mark on the grill, in
             the pan or in the air-fryer. Here&apos;s how our customers cook
             GrillMark best.
           </Reveal>
@@ -158,7 +158,7 @@ export default function RecipesPage() {
               Four ways to cook it
             </h2>
             <p className="mx-auto mt-4 max-w-[520px] text-[15.5px] leading-[1.7] text-clay-600">
-              Sold raw and ready, GrillMark takes to any heat. Pick your method
+              Prepared fresh, GrillMark takes to any heat. Pick your method
               and timing — the mark is yours to make.
             </p>
           </Reveal>

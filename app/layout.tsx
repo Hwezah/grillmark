@@ -30,16 +30,16 @@ const anton = Anton({
 
 export const metadata: Metadata = {
   title: {
-    default: "GrillMark — Marked by Flavour",
+    default: "GrillMark — Marked by Flavor",
     template: "%s — GrillMark",
   },
   description:
-    "GrillMark makes honest sausages and franks in Ntinda, Kampala — real cuts, bold seasoning, no fillers. Marked by flavour. Taste & see.",
+    "GrillMark is a food brand inspired by the possibilities of flavor. Starting in Uganda with distinctive sausages and franks, and a growing world of foods to come. Marked by Flavor.",
   metadataBase: new URL(BRAND.siteUrl),
   openGraph: {
-    title: "GrillMark — Marked by Flavour",
+    title: "GrillMark — Marked by Flavor",
     description:
-      "Honest sausages and franks from Ntinda, Kampala. Real cuts, bold seasoning, no fillers.",
+      "A food brand inspired by the possibilities of flavor, creating food people remember. By Salvation Foods Ltd. Made in Uganda.",
     type: "website",
   },
 };

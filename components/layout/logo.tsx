@@ -24,7 +24,7 @@ export function Logo({
   return (
     <Link
       href={href}
-      aria-label="GrillMark — Marked by Flavour"
+      aria-label="GrillMark — Marked by Flavor"
       className={cn("inline-flex items-center", className)}
     >
       <Image
