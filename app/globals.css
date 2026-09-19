@@ -23,8 +23,8 @@
     --muted: 40 30% 92%;
     --muted-foreground: 24 13% 48%; /* clay #8a766c */
 
-    --accent: 20 98% 45%; /* ember #E24F02 */
-    --accent-foreground: 40 60% 96%;
+    --accent: 35 78% 52%; /* gold #E59425 */
+    --accent-foreground: 13 32% 10%;
 
     --destructive: 358 69% 42%;
     --destructive-foreground: 40 60% 96%;
@@ -58,8 +58,8 @@
   }
 
   ::selection {
-    background: #e24f02;
-    color: #fff6ec;
+    background: #e59425;
+    color: #231512;
   }
 }
 

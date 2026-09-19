@@ -106,7 +106,7 @@ function applyLink(role: string): string {
 }
 
 const CURVES: CurveEntry[] = [
-  { label: "Roles", from: "#FBF6EE", to: "#200d0a" },
+  { label: "Roles", from: "#FBF6EE", to: "#7E1A1C" },
 ];
 
 export default function CareersPage() {
@@ -255,7 +255,7 @@ export default function CareersPage() {
                       {r.tag}
                     </span>
                   </div>
-                  <p className="m-0 mt-2 text-[14.5px] leading-[1.6] text-[#CDB6A8]">
+                  <p className="m-0 mt-2 text-[14.5px] leading-[1.6] text-[#E8CDBB]">
                     {r.body}
                   </p>
                 </div>

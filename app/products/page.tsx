@@ -43,8 +43,8 @@ const STEPS = [
 const CURVES: CurveEntry[] = [
   { label: "BoxBuilder", from: "#FBF6EE", to: "#F5EDE0" },
   { label: "Finder", from: "#F5EDE0", to: "#EFECE5" },
-  { label: "Steps", from: "#EFECE5", to: "#200d0a" },
-  { label: "FireItUp", from: "#200d0a", to: "#EFECE5" },
+  { label: "Steps", from: "#EFECE5", to: "#7E1A1C" },
+  { label: "FireItUp", from: "#7E1A1C", to: "#EFECE5" },
 ];
 
 export default function ProductsPage() {
@@ -202,7 +202,7 @@ export default function ProductsPage() {
               <h3 className="mb-2 mt-4 text-[clamp(18px,1.6vw,22px)] font-semibold text-[#F7EFE2]">
                 {s.title}
               </h3>
-              <p className="m-0 text-[14.5px] leading-[1.64] text-[#CDB6A8]">
+              <p className="m-0 text-[14.5px] leading-[1.64] text-[#E8CDBB]">
                 {s.body}
               </p>
             </Reveal>

@@ -66,8 +66,8 @@ const STATS = [
 ];
 
 const CURVES: CurveEntry[] = [
-  { label: "Values", from: "#FBF6EE", to: "#200d0a" },
-  { label: "Stats", from: "#200d0a", to: "#FFFFFF" },
+  { label: "Values", from: "#FBF6EE", to: "#7E1A1C" },
+  { label: "Stats", from: "#7E1A1C", to: "#FFFFFF" },
 ];
 
 const eyebrow = "font-mono text-[12.5px] uppercase tracking-[0.16em] text-brand-deep";
@@ -250,7 +250,7 @@ export default function AboutPage() {
                 <h3 className="m-0 text-[clamp(19px,1.7vw,23px)] font-semibold tracking-[-0.01em] text-[#F7EFE2]">
                   {v.title}
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.64] text-[#CDB6A8]">
+                <p className="m-0 text-[15px] leading-[1.64] text-[#E8CDBB]">
                   {v.desc}
                 </p>
               </Reveal>

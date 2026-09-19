@@ -265,7 +265,7 @@ export function ComingSoonCard({
       <div className="relative flex aspect-[10/11] items-center justify-center overflow-hidden bg-gradient-to-br from-[#2a140f] via-cocoa to-[#180a07]">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(226,79,2,0.28),transparent_62%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(229,148,37,0.28),transparent_62%)]"
         />
         {/* faint criss-cross grill grate */}
         <div
@@ -274,7 +274,7 @@ export function ComingSoonCard({
         />
         <Flame
           aria-hidden
-          className="relative h-16 w-16 text-ember drop-shadow-[0_6px_20px_rgba(226,79,2,0.5)] transition-transform duration-500 group-hover:scale-110"
+          className="relative h-16 w-16 text-ember drop-shadow-[0_6px_20px_rgba(229,148,37,0.5)] transition-transform duration-500 group-hover:scale-110"
           strokeWidth={1.4}
         />
         <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/[0.12] px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream-light backdrop-blur-sm">

@@ -27,7 +27,7 @@ export function AccountPanel() {
     <div className="flex min-h-screen items-center justify-center bg-[radial-gradient(120%_120%_at_50%_0%,#2a110d_0%,#1b0b08_60%)] px-5 py-10">
       <div className="w-full max-w-[440px] rounded-[24px] bg-cream p-[38px_34px_34px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
         <div className="mb-[18px] flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand">
-          <span className="h-[7px] w-[7px] rounded-full bg-ember shadow-[0_0_10px_1px_rgba(226,79,2,0.6)]" />
+          <span className="h-[7px] w-[7px] rounded-full bg-ember shadow-[0_0_10px_1px_rgba(229,148,37,0.6)]" />
           GrillMark Account
         </div>
 

@@ -18,8 +18,8 @@ interface SparklesProps {
 }
 
 /** Warm brand palettes per mode. */
-const DRIFT_COLORS = ["#E8B27A", "#E24F02", "#FFF6EC", "#B52126", "#F2C99B"];
-const POP_COLORS = ["#E24F02", "#F4CBA6", "#E8B27A", "#B52126", "#F7DEC4", "#C86A3A"];
+const DRIFT_COLORS = ["#E8B27A", "#E59425", "#FFF6EC", "#B52126", "#F2C99B"];
+const POP_COLORS = ["#E59425", "#F4CBA6", "#E8B27A", "#B52126", "#F7DEC4", "#C86A3A"];
 
 /** Soft round sprite for the glowing drift embers. */
 function makeSprite(): THREE.Texture {

@@ -59,14 +59,14 @@ const SOCIAL_TILES = [
 ];
 
 const CURVES: CurveEntry[] = [
-  { label: "Story", from: "#200d0a", to: "#FBF6EE" },
+  { label: "Story", from: "#7E1A1C", to: "#FBF6EE" },
   { label: "Range", from: "#FBF6EE", to: "#FFFFFF" },
   { label: "Why", from: "#FFFFFF", to: "#FBF6EE" },
-  { label: "Raw", from: "#FBF6EE", to: "#200d0a" },
-  { label: "Testimonials", from: "#200d0a", to: "#FFFFFF" },
+  { label: "Raw", from: "#FBF6EE", to: "#7E1A1C" },
+  { label: "Testimonials", from: "#7E1A1C", to: "#FFFFFF" },
   { label: "Hungry", from: "#FFFFFF", to: "#EFECE5" },
   { label: "Social", from: "#EFECE5", to: "#FBF6EE" },
-  { label: "Newsletter", from: "#FBF6EE", to: "#200d0a" },
+  { label: "Newsletter", from: "#FBF6EE", to: "#7E1A1C" },
 ];
 
 export default function HomePage() {
@@ -211,13 +211,13 @@ export default function HomePage() {
           >
             {COLLECTIONS.map((p) => (
               <div key={p.num}>
-                <div className="font-hanken text-[clamp(30px,3vw,40px)] font-black leading-none text-[#8a6d54]">
+                <div className="font-hanken text-[clamp(30px,3vw,40px)] font-black leading-none text-[#C98A2E]">
                   {p.num}
                 </div>
                 <h3 className="mb-2 mt-3.5 text-[clamp(17px,1.6vw,21px)] font-bold text-[#F7EFE2]">
                   {p.title}
                 </h3>
-                <p className="m-0 max-w-[420px] text-[14.5px] leading-[1.66] text-[#CDB6A8]">
+                <p className="m-0 max-w-[420px] text-[14.5px] leading-[1.66] text-[#E8CDBB]">
                   {p.body}
                 </p>
               </div>
@@ -225,7 +225,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal
             delay={140}
-            className="mt-[clamp(24px,3vw,36px)] max-w-[620px] text-[14.5px] leading-[1.66] text-[#CDB6A8] max-[880px]:mx-auto max-[880px]:text-center"
+            className="mt-[clamp(24px,3vw,36px)] max-w-[620px] text-[14.5px] leading-[1.66] text-[#E8CDBB] max-[880px]:mx-auto max-[880px]:text-center"
           >
             These collections give us a framework for exploring flavor while
             leaving room for new ideas.
@@ -405,7 +405,7 @@ export default function HomePage() {
             <h2 className="m-0 font-hanken text-[clamp(24px,2.8vw,38px)] font-bold uppercase leading-[1.1] tracking-[-0.015em] text-[#F7EFE2]">
               Flavor, straight to your inbox
             </h2>
-            <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.68] text-[#CDB6A8] max-[880px]:mx-auto">
+            <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.68] text-[#E8CDBB] max-[880px]:mx-auto">
               New recipes, new ingredients, new combinations — and the new ideas
               still ahead. No spam, just what&apos;s next from GrillMark.
             </p>

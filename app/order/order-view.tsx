@@ -188,8 +188,8 @@ function WholesaleForm() {
 /* --------------------------------- the page -------------------------------- */
 
 const CURVES: CurveEntry[] = [
-  { label: "Wholesale", from: "#FBF6EE", to: "#200d0a" },
-  { label: "Faq", from: "#200d0a", to: "#EFECE5" },
+  { label: "Wholesale", from: "#FBF6EE", to: "#7E1A1C" },
+  { label: "Faq", from: "#7E1A1C", to: "#EFECE5" },
 ];
 
 export function OrderView() {
@@ -409,7 +409,7 @@ export function OrderView() {
               },
               {
                 Icon: Mail,
-                color: "#E24F02",
+                color: "#E59425",
                 label: "Email",
                 value: CONTACT.emailGeneral,
                 href: `mailto:${CONTACT.emailGeneral}`,
@@ -558,7 +558,7 @@ export function OrderView() {
             <Reveal
               as="p"
               delay={110}
-              className="mt-5 max-w-[460px] text-[15.5px] leading-[1.7] text-[#CDB6A8] max-[900px]:mx-auto"
+              className="mt-5 max-w-[460px] text-[15.5px] leading-[1.7] text-[#E8CDBB] max-[900px]:mx-auto"
             >
               We supply restaurants, hotels, cafés, caterers and supermarkets
               with premium sausages and franks at wholesale rates — packed cold
@@ -601,7 +601,7 @@ export function OrderView() {
                     <span className="block font-hanken text-[16px] font-bold text-[#F7EFE2]">
                       {b.t}
                     </span>
-                    <span className="block text-[14px] text-[#CDB6A8]">
+                    <span className="block text-[14px] text-[#E8CDBB]">
                       {b.d}
                     </span>
                   </span>

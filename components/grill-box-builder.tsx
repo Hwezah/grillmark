@@ -110,7 +110,7 @@ export function GrillBoxBuilder() {
                 <span className="font-semibold">{formatUGX(l.total)}</span>
               </div>
             ))}
-            <div className="mt-1 flex items-baseline justify-between text-[14px] text-[#CDB6A8]">
+            <div className="mt-1 flex items-baseline justify-between text-[14px] text-[#E8CDBB]">
               <span>Subtotal</span>
               <span>{formatUGX(totals.subtotal)}</span>
             </div>
@@ -136,7 +136,7 @@ export function GrillBoxBuilder() {
           </span>
         </div>
         {totals.packsToDiscount > 0 && totals.packs > 0 && (
-          <p className="mt-2 text-[13.5px] text-[#CDB6A8]">
+          <p className="mt-2 text-[13.5px] text-[#E8CDBB]">
             Add {totals.packsToDiscount} more pack
             {totals.packsToDiscount > 1 ? "s" : ""} to unlock 10% off.
           </p>

@@ -34,11 +34,11 @@ export function Footer() {
             >
               {BRAND.site}
             </a>
-            <p className="m-0 max-w-[320px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:mx-auto max-[620px]:max-w-none">
+            <p className="m-0 max-w-[320px] text-[14.5px] leading-[1.6] text-[#E0C3B4] max-[620px]:mx-auto max-[620px]:max-w-none">
               A food brand inspired by the possibilities of flavor — creating
               food people remember. {BRAND.descriptor} {BRAND.origin}.
             </p>
-            <p className="mt-1.5 max-w-[320px] text-[14.5px] leading-[1.6] text-[#B89C8E] max-[620px]:mx-auto max-[620px]:max-w-none">
+            <p className="mt-1.5 max-w-[320px] text-[14.5px] leading-[1.6] text-[#E0C3B4] max-[620px]:mx-auto max-[620px]:max-w-none">
               <span className="mr-2 font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
                 Visit:
               </span>
@@ -118,7 +118,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 pt-[26px] font-mono text-[11.5px] tracking-[0.06em] text-[#8a6a5c] max-[620px]:justify-center max-[620px]:text-center">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 pt-[26px] font-mono text-[11.5px] tracking-[0.06em] text-[#B98A72] max-[620px]:justify-center max-[620px]:text-center">
           <span>
             © {year} {BRAND.company} · GrillMark
           </span>

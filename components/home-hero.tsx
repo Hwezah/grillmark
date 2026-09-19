@@ -19,7 +19,7 @@ export function HomeHero() {
       {/* Warm vignette + ember sparkles */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(226,79,2,0.10),transparent_58%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(229,148,37,0.10),transparent_58%)]"
       />
       <DeferredSparkles mode="drift" count={110} sizeRange={[0.03, 0.12]} speed={0.8} />
 
@@ -58,7 +58,7 @@ export function HomeHero() {
         >
           <Link
             href="/products"
-            className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-brand px-8 py-[16px] text-[15px] font-extrabold text-white shadow-[0_18px_40px_-16px_rgba(226,79,2,0.65)] transition-transform hover:-translate-y-[3px]"
+            className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-brand px-8 py-[16px] text-[15px] font-extrabold text-white shadow-[0_18px_40px_-16px_rgba(229,148,37,0.65)] transition-transform hover:-translate-y-[3px]"
           >
             Explore GrillMark <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
           </Link>

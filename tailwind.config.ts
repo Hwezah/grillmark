@@ -16,7 +16,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // ---- GrillMark brand palette (from the design handoff) ----
+        // ---- GrillMark brand palette (official: red · gold · cream) ----
         cream: {
           DEFAULT: "#FBF6EE", // page background
           card: "#FFFDF8", // raised card
@@ -25,13 +25,13 @@ const config: Config = {
         },
         ink: "#231512", // near-black brand text
         brand: {
-          DEFAULT: "#B52126", // primary red
+          DEFAULT: "#B52126", // primary red (CTA fills)
           dark: "#9f1d21", // hover red
           deep: "#8E1A1E", // deep red
         },
-        ember: "#E24F02", // orange accent
-        tan: "#E8B27A",
-        cocoa: "#200d0a", // dark brown sections
+        ember: "#E59425", // gold / amber accent
+        tan: "#E9B45C", // light gold — eyebrows & labels on dark
+        cocoa: "#7E1A1C", // deep red — large dark sections
         clay: {
           DEFAULT: "#8a766c",
           600: "#7A6A60",

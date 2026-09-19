@@ -113,8 +113,8 @@ const TIMES = [
 
 const CURVES: CurveEntry[] = [
   { label: "RecipeBox", from: "#FBF6EE", to: "#F5EDE0" },
-  { label: "ProTips", from: "#F5EDE0", to: "#200d0a" },
-  { label: "Times", from: "#200d0a", to: "#FFFFFF" },
+  { label: "ProTips", from: "#F5EDE0", to: "#7E1A1C" },
+  { label: "Times", from: "#7E1A1C", to: "#FFFFFF" },
 ];
 
 export default function RecipesPage() {
@@ -258,7 +258,7 @@ export default function RecipesPage() {
                 <h3 className="mb-1.5 mt-3 text-[clamp(18px,1.7vw,23px)] font-bold text-[#F7EFE2]">
                   {t.title}
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.64] text-[#CDB6A8]">
+                <p className="m-0 text-[15px] leading-[1.64] text-[#E8CDBB]">
                   {t.body}
                 </p>
               </Reveal>
