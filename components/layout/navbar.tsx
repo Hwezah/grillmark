@@ -215,7 +215,7 @@ export function Navbar() {
               type="text"
               autoFocus={searchOpen}
               placeholder="Search for products …"
-              className="w-full min-w-0 flex-1 bg-transparent px-0.5 py-2.5 text-[clamp(24px,3.2vw,42px)] font-semibold tracking-[-0.01em] text-ink outline-none placeholder:text-[#a89384]"
+              className="w-full min-w-0 flex-1 bg-transparent px-0.5 py-2.5 text-[clamp(24px,3.2vw,42px)] font-semibold tracking-[-0.01em] text-ink outline-none placeholder:text-clay/70"
             />
             <button
               type="button"
@@ -290,7 +290,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="mt-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 text-center font-mono text-[12px] tracking-[0.08em] text-[#9a877d]">
+          <div className="mt-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 text-center font-mono text-[12px] tracking-[0.08em] text-cream-soft/70">
             <span>{BRAND.location}</span>
             <span>{CONTACT.phonePrimary}</span>
             <span>{CONTACT.phoneSecondary}</span>

@@ -25,7 +25,7 @@ export function NewsletterForm() {
         <p className="m-0 font-hanken text-[17px] font-bold text-cream-soft">
           You&apos;re on the grill list ✓
         </p>
-        <p className="m-0 mt-1.5 text-[13.5px] text-[#9a877d]">
+        <p className="m-0 mt-1.5 text-[13.5px] text-cream-soft/80">
           Flavor news is headed to {email.trim()}.
         </p>
       </div>

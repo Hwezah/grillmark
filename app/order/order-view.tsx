@@ -342,7 +342,7 @@ export function OrderView() {
               Order summary
             </span>
             {totals.grams > 0 && (
-              <span className="font-mono text-[12px] text-[#9a877d]">
+              <span className="font-mono text-[12px] text-cream-soft/80">
                 {formatGrams(totals.grams)} total
               </span>
             )}
@@ -368,7 +368,7 @@ export function OrderView() {
               )}
             </div>
           ) : (
-            <p className="mt-4 border-b border-white/10 pb-4 text-[15px] text-[#9a877d]">
+            <p className="mt-4 border-b border-white/10 pb-4 text-[15px] text-cream-soft/80">
               Nothing picked yet — your items will appear here.
             </p>
           )}

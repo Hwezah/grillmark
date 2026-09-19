@@ -92,7 +92,7 @@ export function GrillBoxBuilder() {
           <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-tan">
             Your grill box
           </span>
-          <span className="text-right font-mono text-[12px] text-[#9a877d]">
+          <span className="text-right font-mono text-[12px] text-cream-soft/80">
             {totals.grams > 0 ? `${formatGrams(totals.grams)} total` : "Empty"}
           </span>
         </div>
@@ -122,7 +122,7 @@ export function GrillBoxBuilder() {
             )}
           </div>
         ) : (
-          <p className="mt-4 border-b border-white/10 pb-4 text-[15px] text-[#9a877d]">
+          <p className="mt-4 border-b border-white/10 pb-4 text-[15px] text-cream-soft/80">
             Use the steppers above to stack packs into your box.
           </p>
         )}
