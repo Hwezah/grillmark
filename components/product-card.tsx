@@ -296,7 +296,7 @@ export function ComingSoonCard({
           href={waNotify(name)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-cocoa px-5 py-3 text-[14.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
+          className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-[14.5px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
         >
           <Bell className="h-[16px] w-[16px]" strokeWidth={2} aria-hidden />
           Notify me

@@ -146,7 +146,7 @@ export default function HomePage() {
             <Reveal delay={80}>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-cocoa px-6 py-3 text-[14px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand px-6 py-3 text-[14px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
               >
                 View all products <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
               </Link>
@@ -359,7 +359,7 @@ export default function HomePage() {
                 href="https://tiktok.com/@grillmark"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cocoa px-5 py-2.5 text-[13.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[13.5px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
               >
                 <TikTok className="h-4 w-4" /> TikTok
               </a>

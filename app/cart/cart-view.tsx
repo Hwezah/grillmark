@@ -148,7 +148,7 @@ export function CartView() {
                 <button
                   type="button"
                   onClick={applyPromo}
-                  className="m-1 rounded-full bg-cocoa px-5 py-2 text-[13.5px] font-bold text-cream-soft"
+                  className="m-1 rounded-full bg-brand px-5 py-2 text-[13.5px] font-bold text-cream-light"
                 >
                   Apply
                 </button>

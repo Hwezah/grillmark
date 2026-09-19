@@ -129,7 +129,7 @@ export function PackFinder() {
             <button
               type="button"
               onClick={addPicks}
-              className="rounded-full bg-cocoa px-5 py-2.5 text-[13.5px] font-bold text-cream-soft transition-transform hover:-translate-y-0.5"
+              className="rounded-full bg-brand px-5 py-2.5 text-[13.5px] font-bold text-cream-light transition-transform hover:-translate-y-0.5"
             >
               {addedPicks ? "Added to your box ✓" : "Add picks to my box"}
             </button>

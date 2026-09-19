@@ -21,7 +21,7 @@ export function HomeHero() {
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(229,148,37,0.10),transparent_58%)]"
       />
-      <DeferredSparkles mode="drift" count={110} sizeRange={[0.03, 0.12]} speed={0.8} />
+      <DeferredSparkles mode="drift" count={220} sizeRange={[0.03, 0.14]} speed={0.85} />
 
       <div className="relative mx-auto flex max-w-[760px] flex-col items-center text-center">
         <p
