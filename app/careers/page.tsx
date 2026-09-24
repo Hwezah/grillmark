@@ -111,7 +111,7 @@ const CURVES: CurveEntry[] = [
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+    <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">

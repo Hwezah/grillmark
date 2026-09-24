@@ -74,7 +74,7 @@ const eyebrow = "font-mono text-[12.5px] uppercase tracking-[0.16em] text-brand-
 
 export default function AboutPage() {
   return (
-    <div className="overflow-x-hidden bg-cream text-ink">
+    <div className="overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
 
       {/* ------------------------------- HERO ------------------------------- */}

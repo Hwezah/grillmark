@@ -49,7 +49,7 @@ const CURVES: CurveEntry[] = [
 
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+    <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">

@@ -211,7 +211,7 @@ export function OrderView() {
     "w-full rounded-[14px] border border-ink/10 bg-cream px-4 py-3.5 text-[15px] text-ink outline-none placeholder:text-clay focus:border-brand";
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+    <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
@@ -540,9 +540,9 @@ export function OrderView() {
       </section>
 
       {/* ----------------------------- WHOLESALE ----------------------------- */}
-      <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-clip bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[1fr_1.05fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
-          <div className="max-[900px]:text-center">
+          <div className="sticky top-[110px] self-start max-[900px]:static max-[900px]:text-center">
             <Reveal className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
               For business · B2B
             </Reveal>
@@ -631,8 +631,8 @@ export function OrderView() {
 
       {/* -------------------------------- FAQ -------------------------------- */}
       <section data-screen-label="Faq" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
-        <div className="mx-auto grid max-w-[1080px] grid-cols-[0.9fr_1.1fr] gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
-          <div className="max-[900px]:text-center">
+        <div className="mx-auto grid max-w-[1080px] grid-cols-[0.9fr_1.1fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
+          <div className="sticky top-[110px] self-start max-[900px]:static max-[900px]:text-center">
             <Reveal className={`${eyebrow} mb-4`}>Good to know</Reveal>
             <Reveal
               as="h2"

@@ -71,14 +71,14 @@ const CURVES: CurveEntry[] = [
 
 export default function HomePage() {
   return (
-    <div className="overflow-x-hidden bg-cream text-ink">
+    <div className="overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
       <HomeHero />
 
       {/* ------------------------------- STORY ------------------------------ */}
       <section data-screen-label="Story" className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
-        <div className="mx-auto grid max-w-[1180px] grid-cols-[1.05fr_0.95fr] items-center gap-[clamp(28px,4.5vw,72px)] max-[880px]:grid-cols-1">
+        <div className="mx-auto grid max-w-[1180px] grid-cols-[1.05fr_0.95fr] items-start gap-[clamp(28px,4.5vw,72px)] max-[880px]:grid-cols-1">
           <Reveal className="relative">
             <span className="ml-[6%] inline-block -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink max-[880px]:text-[17px]">
               Creating food
@@ -103,7 +103,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={100} className="max-[880px]:text-center">
+          <Reveal delay={100} className="sticky top-[110px] self-start max-[880px]:static max-[880px]:text-center">
             <div className={`${eyebrow} mb-4`}>Our story</div>
             <h2 className="m-0 font-hanken text-[clamp(28px,3.4vw,44px)] font-bold uppercase leading-[1.06] tracking-[-0.02em]">
               It began with better food
@@ -397,7 +397,7 @@ export default function HomePage() {
 
       {/* ----------------------------- NEWSLETTER ----------------------------- */}
       <section data-screen-label="Newsletter" className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,88px)] text-cream-soft">
-        <div className="mx-auto grid max-w-[1180px] grid-cols-[1fr_1.1fr] items-center gap-[clamp(28px,4vw,64px)] max-[880px]:grid-cols-1">
+        <div className="mx-auto grid max-w-[1180px] grid-cols-[1fr_1.1fr] items-start gap-[clamp(28px,4vw,64px)] max-[880px]:grid-cols-1">
           <Reveal className="max-[880px]:text-center">
             <div className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
               Join the grill list
@@ -410,7 +410,7 @@ export default function HomePage() {
               still ahead. No spam, just what&apos;s next from GrillMark.
             </p>
           </Reveal>
-          <Reveal delay={100}>
+          <Reveal delay={100} className="sticky top-[110px] self-start max-[880px]:static">
             <NewsletterForm />
           </Reveal>
         </div>

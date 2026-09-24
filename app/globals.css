@@ -54,7 +54,7 @@
 
   body {
     @apply bg-cream text-ink font-sans antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   ::selection {
