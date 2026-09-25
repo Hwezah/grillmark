@@ -51,7 +51,7 @@ export function Footer() {
             <div className="mb-[18px] font-mono text-[11.5px] uppercase tracking-[0.14em] text-tan">
               Explore
             </div>
-            <div className="flex flex-col gap-3 max-[620px]:items-center">
+            <div className="flex flex-col gap-3 max-[620px]:mx-auto max-[620px]:grid max-[620px]:w-fit max-[620px]:grid-cols-2 max-[620px]:gap-x-12 max-[620px]:gap-y-3.5 max-[620px]:text-center">
               {EXPLORE_LINKS.map((l) => (
                 <Link
                   key={l.label}
