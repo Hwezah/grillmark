@@ -56,7 +56,7 @@ export function NewsletterForm() {
           Subscribe <ArrowRight className="h-[17px] w-[17px]" aria-hidden />
         </button>
       </form>
-      <p className="m-0 mt-3 font-mono text-[11.5px] tracking-[0.04em] text-[#8d7a70]">
+      <p className="m-0 mt-3 text-center font-mono text-[11.5px] tracking-[0.04em] text-cream-soft/90">
         {state === "error"
           ? "Please enter a valid email address."
           : "We'll only email you about GrillMark. Unsubscribe anytime."}
