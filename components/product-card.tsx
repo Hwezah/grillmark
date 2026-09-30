@@ -57,14 +57,16 @@ export function ProductCard({
         <h3 className="m-0 font-hanken text-[19px] font-semibold tracking-[-0.01em] text-ink">
           {product.name}
         </h3>
-        <div className="mt-2 flex items-baseline gap-1.5">
-          <span className="font-hanken text-[21px] font-extrabold text-brand">
-            {formatUGX(product.prices["1kg"])}
+        <div className="mt-2 flex items-baseline justify-between gap-3">
+          <span className="flex items-baseline gap-1.5">
+            <span className="font-hanken text-[21px] font-extrabold text-brand">
+              {formatUGX(product.prices["1kg"])}
+            </span>
+            <span className="text-[14px] text-clay">/ 1kg</span>
           </span>
-          <span className="text-[14px] text-clay">/ 1kg</span>
-        </div>
-        <div className="mt-1 font-mono text-[12.5px] text-clay">
-          {formatUGX(product.prices["500g"])} · 500g each
+          <span className="font-mono text-[12.5px] text-clay">
+            {formatUGX(product.prices["500g"])} · 500g
+          </span>
         </div>
 
         <div className="mt-auto flex gap-2.5 pt-5">

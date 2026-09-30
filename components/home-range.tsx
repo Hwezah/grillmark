@@ -40,14 +40,16 @@ export function HomeRange() {
             <h3 className="m-0 font-hanken text-[17px] font-semibold text-ink">
               {p.name}
             </h3>
-            <div className="mt-1.5 flex items-baseline gap-1.5">
-              <span className="font-hanken text-[19px] font-extrabold text-brand">
-                {formatUGX(p.prices["1kg"])}
+            <div className="mt-1.5 flex items-baseline justify-between gap-2.5">
+              <span className="flex items-baseline gap-1.5">
+                <span className="font-hanken text-[19px] font-extrabold text-brand">
+                  {formatUGX(p.prices["1kg"])}
+                </span>
+                <span className="text-[13px] text-clay">/ 1kg</span>
               </span>
-              <span className="text-[13px] text-clay">/ 1kg</span>
-            </div>
-            <div className="mt-0.5 font-mono text-[11.5px] text-clay">
-              {formatUGX(p.prices["500g"])} · 500g
+              <span className="font-mono text-[11.5px] text-clay">
+                {formatUGX(p.prices["500g"])} · 500g
+              </span>
             </div>
             {/* Wraps to stacked whenever the card is too narrow for both
                 buttons side by side, so the labels never collide. */}
