@@ -114,7 +114,7 @@ export default function CareersPage() {
     <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
-      <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
+      <header className="px-[clamp(12px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
         <div className="mx-auto max-w-[880px]">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
@@ -142,7 +142,7 @@ export default function CareersPage() {
       </header>
 
       {/* ------------------------------- PERKS ------------------------------- */}
-      <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
+      <section className="px-[clamp(12px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,52px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>Why work here</div>
@@ -183,7 +183,7 @@ export default function CareersPage() {
       </section>
 
       {/* ----------------------------- HOW TO APPLY ---------------------------- */}
-      <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(64px,8vw,104px)]">
+      <section className="px-[clamp(12px,4vw,46px)] pb-[clamp(64px,8vw,104px)]">
         <div className="mx-auto max-w-[880px]">
           <Reveal className="max-[1020px]:text-center">
             <div className={`${eyebrow} mb-4`}>Getting hired</div>
@@ -217,7 +217,7 @@ export default function CareersPage() {
       {/* ------------------------------ OPEN ROLES ----------------------------- */}
       <section data-screen-label="Roles"
         id="roles"
-        className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft"
+        className="relative overflow-hidden bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft"
       >
         <Image
           src="/images/logo-cream.png"
@@ -274,7 +274,7 @@ export default function CareersPage() {
       </section>
 
       {/* ------------------------------- STATS -------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
+      <section className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-4 gap-[clamp(18px,2vw,32px)] max-[720px]:grid-cols-2 max-[720px]:gap-y-[38px]">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 70} className="text-center">
@@ -290,7 +290,7 @@ export default function CareersPage() {
       </section>
 
       {/* -------------------------------- CTA --------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(20px,3vw,40px)]">
+      <section className="bg-white px-[clamp(12px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(20px,3vw,40px)]">
         <Reveal className="mx-auto max-w-[1080px] rounded-[28px] bg-gradient-to-br from-brand to-brand-deep p-[clamp(36px,5vw,64px)] text-center text-cream-light">
           <h2 className="m-0 font-hanken text-[clamp(28px,4.2vw,56px)] font-semibold uppercase leading-[0.98] tracking-[-0.025em]">
             Don&apos;t see your role?

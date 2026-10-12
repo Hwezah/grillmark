@@ -13,7 +13,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-cocoa px-[clamp(18px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
+    <footer className="bg-cocoa px-[clamp(12px,4vw,46px)] pb-9 pt-[clamp(54px,6vw,82px)] text-[#E9D8CB]">
       <div className="mx-auto max-w-[1280px]">
         <div className="grid grid-cols-[1.6fr_0.8fr_0.8fr_1fr] items-start gap-x-[clamp(24px,3.4vw,52px)] gap-y-[clamp(24px,3vw,52px)] border-b border-[#E9D8CB]/[0.14] pb-[clamp(38px,4vw,56px)] max-[860px]:grid-cols-2 max-[620px]:grid-cols-1 max-[620px]:text-center">
           {/* Brand */}

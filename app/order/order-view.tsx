@@ -214,7 +214,7 @@ export function OrderView() {
     <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
-      <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
+      <header className="px-[clamp(12px,4vw,46px)] pb-[clamp(24px,3vw,40px)] pt-[152px]">
         <div className="mx-auto max-w-[880px] max-[880px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
@@ -241,7 +241,7 @@ export function OrderView() {
       </header>
 
       {/* ---------------------------- ORDER BUILDER --------------------------- */}
-      <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(24px,3vw,36px)]">
+      <section className="px-[clamp(12px,4vw,46px)] pb-[clamp(24px,3vw,36px)]">
         <div className="mx-auto max-w-[880px] rounded-[24px] bg-cream-card p-[clamp(22px,3vw,36px)]">
           <div className="font-mono text-[12px] uppercase tracking-[0.14em] text-clay-700">
             1 · Choose your items
@@ -335,7 +335,7 @@ export function OrderView() {
       </section>
 
       {/* ------------------------------ SUMMARY ------------------------------ */}
-      <section className="px-[clamp(18px,4vw,46px)]">
+      <section className="px-[clamp(12px,4vw,46px)]">
         <div className="mx-auto max-w-[880px] rounded-[24px] bg-cocoa p-[clamp(22px,3vw,36px)] text-cream-soft">
           <div className="flex items-start justify-between gap-4">
             <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-tan">
@@ -384,7 +384,7 @@ export function OrderView() {
       </section>
 
       {/* ------------------------------ CONTACT ------------------------------ */}
-      <section className="px-[clamp(18px,4vw,46px)] pt-6">
+      <section className="px-[clamp(12px,4vw,46px)] pt-6">
         <div className="mx-auto max-w-[880px] rounded-[24px] bg-cream-card p-[clamp(22px,3vw,36px)]">
           <div className="mb-5 font-mono text-[12px] uppercase tracking-[0.14em] text-clay-700">
             Reach us directly
@@ -472,7 +472,7 @@ export function OrderView() {
       </section>
 
       {/* ------------------------------ REVIEWS ------------------------------ */}
-      <section className="px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
+      <section className="px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto max-w-[880px]">
           <Reveal className="mb-[clamp(32px,4vw,48px)] text-center">
             <div className={`${eyebrow} mb-4`}>Straight from our customers</div>
@@ -540,7 +540,7 @@ export function OrderView() {
       </section>
 
       {/* ----------------------------- WHOLESALE ----------------------------- */}
-      <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-clip bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="Wholesale" id="wholesale" className="relative overflow-clip bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[1fr_1.05fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
           <div className="sticky top-[110px] self-start max-[900px]:static max-[900px]:text-center">
             <Reveal className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
@@ -630,7 +630,7 @@ export function OrderView() {
       </section>
 
       {/* -------------------------------- FAQ -------------------------------- */}
-      <section data-screen-label="Faq" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
+      <section data-screen-label="Faq" className="bg-[#EFECE5] px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-[0.9fr_1.1fr] items-start gap-[clamp(28px,4vw,56px)] max-[900px]:grid-cols-1">
           <div className="sticky top-[110px] self-start max-[900px]:static max-[900px]:text-center">
             <Reveal className={`${eyebrow} mb-4`}>Good to know</Reveal>

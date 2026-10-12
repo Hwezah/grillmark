@@ -78,7 +78,7 @@ export default function AboutPage() {
       <CurveDividers entries={CURVES} />
 
       {/* ------------------------------- HERO ------------------------------- */}
-      <header className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(56px,6vw,88px)] pt-[152px]">
+      <header className="bg-cream px-[clamp(12px,4vw,46px)] pb-[clamp(56px,6vw,88px)] pt-[152px]">
         <div className="mx-auto max-w-[1080px] text-center">
           <Reveal className="mb-6 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       {/* ------------------------------- VISION ----------------------------- */}
       <section
         id="vision"
-        className="scroll-mt-[120px] bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(48px,6vw,88px)]"
+        className="scroll-mt-[120px] bg-cream px-[clamp(12px,4vw,46px)] py-[clamp(48px,6vw,88px)]"
       >
         <div className="mx-auto max-w-[820px] text-center">
           <Reveal>
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------ APPROACH ---------------------------- */}
-      <section className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(20px,3vw,40px)] pt-[clamp(40px,5vw,72px)]">
+      <section className="bg-cream px-[clamp(12px,4vw,46px)] pb-[clamp(20px,3vw,40px)] pt-[clamp(40px,5vw,72px)]">
         <div className="mx-auto max-w-[1180px]">
           <Reveal className="mx-auto mb-[clamp(40px,5vw,64px)] max-w-[680px] text-center">
             <div className={`${eyebrow} mb-4`}>Our approach to flavor</div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------- STORY ------------------------------ */}
-      <section className="bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,116px)]">
+      <section className="bg-cream px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,116px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[0.85fr_1.15fr] items-start gap-[clamp(30px,5vw,76px)] max-[920px]:grid-cols-1">
           <Reveal className="sticky top-[110px] max-[920px]:static max-[920px]:text-center">
             <div className={`${eyebrow} mb-4`}>The GrillMark story</div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
       {/* ------------------------------ VALUES ------------------------------ */}
       <section
         data-screen-label="Values"
-        className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,116px)] text-cream-soft"
+        className="relative overflow-hidden bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,116px)] text-cream-soft"
       >
         <div className="relative mx-auto max-w-[1180px]">
           <Reveal className="mb-[18px] font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">
@@ -262,7 +262,7 @@ export default function AboutPage() {
       {/* ------------------------------- STATS ------------------------------ */}
       <section
         data-screen-label="Stats"
-        className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(54px,6vw,84px)]"
+        className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(54px,6vw,84px)]"
       >
         <div className="mx-auto grid max-w-[1180px] grid-cols-4 gap-[clamp(18px,2vw,32px)] max-[1060px]:grid-cols-2 max-[1060px]:gap-y-[38px]">
           {STATS.map((s, i) => (
@@ -279,7 +279,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------------------- WHAT'S AHEAD --------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,104px)]">
+      <section className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,104px)]">
         <div className="mx-auto max-w-[820px] text-center">
           <Reveal>
             <div className={`${eyebrow} mb-4`}>What&apos;s ahead</div>
@@ -308,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* -------------------------------- CTA ------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(24px,3vw,48px)]">
+      <section className="bg-white px-[clamp(12px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(24px,3vw,48px)]">
         <Reveal className="mx-auto max-w-[1180px] rounded-[28px] bg-gradient-to-br from-brand to-brand-deep p-[clamp(40px,5vw,72px)] text-center text-cream-light">
           <h2 className="m-0 font-hanken text-[clamp(34px,5vw,72px)] font-semibold uppercase leading-[0.98] tracking-[-0.025em]">
             Bring more flavor to the table

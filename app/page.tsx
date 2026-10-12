@@ -77,7 +77,7 @@ export default function HomePage() {
       <HomeHero />
 
       {/* ------------------------------- STORY ------------------------------ */}
-      <section data-screen-label="Story" className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="Story" className="px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[1.05fr_0.95fr] items-start gap-[clamp(28px,4.5vw,72px)] max-[880px]:grid-cols-1">
           <Reveal className="relative">
             <span className="ml-[6%] inline-block -rotate-6 font-hanken text-[15px] font-bold leading-tight text-ink max-[880px]:text-[17px]">
@@ -131,7 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------- RANGE ------------------------------- */}
-      <section data-screen-label="Range" className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="Range" className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
           <div className="mb-[clamp(30px,4vw,48px)] flex items-end justify-between gap-6 max-[880px]:flex-col max-[880px]:items-center max-[880px]:text-center">
             <Reveal>
@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------- WHY / PLATE ---------------------------- */}
-      <section data-screen-label="Why" className="overflow-hidden px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
+      <section data-screen-label="Why" className="overflow-hidden px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto max-w-[1180px]">
           <Reveal className="mx-auto mb-[clamp(36px,4.5vw,60px)] max-w-[720px] text-center">
             <h2 className="m-0 font-hanken text-[clamp(26px,3.2vw,42px)] font-bold leading-[1.14] tracking-[-0.015em]">
@@ -182,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* -------------------------- FLAVOR COLLECTIONS -------------------------- */}
-      <section id="collections" data-screen-label="Raw" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section id="collections" data-screen-label="Raw" className="relative overflow-hidden bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <Image
           src="/images/logo-cream.png"
           alt=""
@@ -234,7 +234,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------- TESTIMONIALS ---------------------------- */}
-      <section data-screen-label="Testimonials" className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
+      <section data-screen-label="Testimonials" className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)]">
         <div className="mx-auto max-w-[1180px]">
           <Reveal className="mx-auto mb-[clamp(36px,4.5vw,56px)] max-w-[560px] text-center">
             <div className={`${eyebrow} mb-4`}>Straight from our customers</div>
@@ -304,7 +304,7 @@ export default function HomePage() {
       </section>
 
       {/* ----------------------------- HUNGRY YET ----------------------------- */}
-      <section data-screen-label="Hungry" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
+      <section data-screen-label="Hungry" className="bg-[#EFECE5] px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
         <Reveal className="mx-auto max-w-[640px]">
           <div className={`${eyebrow} mb-4`}>Experience GrillMark</div>
           <h2 className="m-0 font-hanken text-[clamp(36px,5.5vw,72px)] font-extrabold uppercase leading-[0.96] tracking-[-0.025em]">
@@ -337,7 +337,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------- SOCIAL ------------------------------- */}
-      <section data-screen-label="Social" className="px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="Social" className="px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1180px]">
           <div className="mb-[clamp(28px,3.5vw,44px)] flex items-end justify-between gap-6 max-[880px]:flex-col max-[880px]:items-center max-[880px]:text-center">
             <Reveal className="max-[880px]:w-full">
@@ -396,7 +396,7 @@ export default function HomePage() {
       </section>
 
       {/* ----------------------------- NEWSLETTER ----------------------------- */}
-      <section data-screen-label="Newsletter" className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,88px)] text-cream-soft">
+      <section data-screen-label="Newsletter" className="bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,88px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1180px] grid-cols-[1fr_1.1fr] items-start gap-[clamp(28px,4vw,64px)] max-[880px]:grid-cols-1">
           <Reveal className="max-[880px]:text-center">
             <div className="mb-4 font-mono text-[12.5px] uppercase tracking-[0.16em] text-tan">

@@ -122,7 +122,7 @@ export default function RecipesPage() {
     <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
-      <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
+      <header className="px-[clamp(12px,4vw,46px)] pb-[clamp(40px,5vw,72px)] pt-[152px] text-center">
         <div className="mx-auto max-w-[880px]">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
@@ -150,7 +150,7 @@ export default function RecipesPage() {
       </header>
 
       {/* ------------------------------ METHODS ------------------------------ */}
-      <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
+      <section className="px-[clamp(12px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,52px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>In the kitchen</div>
@@ -191,7 +191,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ----------------------------- RECIPE BOX ----------------------------- */}
-      <section data-screen-label="RecipeBox" className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="RecipeBox" className="bg-cream-soft px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,52px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>The recipe box</div>
@@ -229,7 +229,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ------------------------------ PRO TIPS ------------------------------ */}
-      <section data-screen-label="ProTips" className="relative overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="ProTips" className="relative overflow-hidden bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <Image
           src="/images/logo-cream.png"
           alt=""
@@ -268,7 +268,7 @@ export default function RecipesPage() {
       </section>
 
       {/* ------------------------------- TIMES -------------------------------- */}
-      <section data-screen-label="Times" className="bg-white px-[clamp(18px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
+      <section data-screen-label="Times" className="bg-white px-[clamp(12px,4vw,46px)] py-[clamp(54px,6vw,84px)]">
         <div className="mx-auto grid max-w-[1080px] grid-cols-4 gap-[clamp(18px,2vw,32px)] max-[720px]:grid-cols-2 max-[720px]:gap-y-[38px]">
           {TIMES.map((s, i) => (
             <Reveal key={s.label} delay={i * 70} className="text-center">
@@ -284,7 +284,7 @@ export default function RecipesPage() {
       </section>
 
       {/* -------------------------------- CTA --------------------------------- */}
-      <section className="bg-white px-[clamp(18px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(20px,3vw,40px)]">
+      <section className="bg-white px-[clamp(12px,4vw,46px)] pb-[clamp(72px,8vw,116px)] pt-[clamp(20px,3vw,40px)]">
         <Reveal className="mx-auto max-w-[1080px] rounded-[28px] bg-gradient-to-br from-brand to-brand-deep p-[clamp(36px,5vw,64px)] text-center text-cream-light">
           <h2 className="m-0 font-hanken text-[clamp(30px,4.6vw,60px)] font-semibold uppercase leading-[0.98] tracking-[-0.025em]">
             Hungry now?

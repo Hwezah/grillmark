@@ -52,7 +52,7 @@ export default function ProductsPage() {
     <div className="min-h-screen overflow-x-clip bg-cream text-ink">
       <CurveDividers entries={CURVES} />
       {/* ------------------------------- HERO ------------------------------- */}
-      <header className="px-[clamp(18px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">
+      <header className="px-[clamp(12px,4vw,46px)] pb-[clamp(28px,4vw,48px)] pt-[152px]">
         <div className="mx-auto max-w-[1080px] max-[880px]:text-center">
           <Reveal className="mb-5 inline-flex items-center gap-2.5">
             <span className={eyebrow}>
@@ -83,14 +83,14 @@ export default function ProductsPage() {
       </header>
 
       {/* ------------------------------- RANGE ------------------------------ */}
-      <section className="px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
+      <section className="px-[clamp(12px,4vw,46px)] pb-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <RangeGrid />
         </div>
       </section>
 
       {/* --------------------------- GROWING WORLD --------------------------- */}
-      <section className="bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(56px,7vw,96px)] pt-[clamp(8px,2vw,24px)]">
+      <section className="bg-cream px-[clamp(12px,4vw,46px)] pb-[clamp(56px,7vw,96px)] pt-[clamp(8px,2vw,24px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(30px,4vw,48px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>A growing world of flavor</div>
@@ -155,7 +155,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ---------------------------- BOX BUILDER ---------------------------- */}
-      <section data-screen-label="BoxBuilder" className="bg-cream-soft px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="BoxBuilder" className="bg-cream-soft px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(36px,4vw,56px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>Mix your own · Save 10%</div>
@@ -176,7 +176,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------ FINDER ------------------------------ */}
-      <section data-screen-label="Finder" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
+      <section data-screen-label="Finder" className="bg-[#EFECE5] px-[clamp(12px,4vw,46px)] py-[clamp(56px,7vw,96px)]">
         <div className="mx-auto max-w-[1080px]">
           <Reveal className="mx-auto mb-[clamp(30px,3.5vw,44px)] max-w-[640px] text-center">
             <div className={`${eyebrow} mb-4`}>Not sure where to start?</div>
@@ -192,7 +192,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------- STEPS ------------------------------- */}
-      <section data-screen-label="Steps" className="bg-cocoa px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
+      <section data-screen-label="Steps" className="bg-cocoa px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-cream-soft">
         <div className="mx-auto grid max-w-[1080px] grid-cols-3 gap-[clamp(24px,3vw,48px)] max-[760px]:grid-cols-1">
           {STEPS.map((s, i) => (
             <Reveal key={s.num} delay={i * 90}>
@@ -211,7 +211,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ------------------------------ FIRE IT UP ---------------------------- */}
-      <section data-screen-label="FireItUp" className="bg-[#EFECE5] px-[clamp(18px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
+      <section data-screen-label="FireItUp" className="bg-[#EFECE5] px-[clamp(12px,4vw,46px)] py-[clamp(64px,8vw,108px)] text-center">
         <Reveal className="mx-auto max-w-[640px]">
           <h2 className="m-0 font-hanken text-[clamp(34px,5vw,64px)] font-extrabold uppercase leading-[0.98] tracking-[-0.025em] text-ink">
             Fire it up

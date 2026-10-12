@@ -25,7 +25,7 @@ export function CartView() {
   };
 
   return (
-    <div className="min-h-screen bg-cream px-[clamp(18px,4vw,46px)] pb-[clamp(64px,8vw,108px)] pt-[132px] text-ink">
+    <div className="min-h-screen bg-cream px-[clamp(12px,4vw,46px)] pb-[clamp(64px,8vw,108px)] pt-[132px] text-ink">
       <div className="mx-auto max-w-[880px]">
         {/* Breadcrumb + title + stepper */}
         <nav className="font-mono text-[12px] uppercase tracking-[0.14em] text-clay">

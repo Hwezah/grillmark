@@ -14,7 +14,7 @@ import { DeferredSparkles } from "@/components/deferred-sparkles";
 export function HomeHero() {
   return (
     <section
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-cocoa px-[clamp(18px,4vw,46px)] py-[140px]"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-cocoa px-[clamp(12px,4vw,46px)] py-[140px]"
     >
       {/* Warm vignette + ember sparkles */}
       <div

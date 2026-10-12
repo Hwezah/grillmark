@@ -69,7 +69,7 @@ export function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b px-[clamp(18px,4vw,46px)] py-5 transition-[background,box-shadow,border-color] duration-300",
+          "fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b px-[clamp(12px,4vw,46px)] py-5 transition-[background,box-shadow,border-color] duration-300",
           solid
             ? "border-ink/[0.07] bg-cream/95 shadow-[0_14px_36px_-22px_rgba(0,0,0,0.55)] backdrop-blur-[14px]"
             : "border-transparent bg-transparent"
@@ -206,7 +206,7 @@ export function Navbar() {
         />
         <div
           className={cn(
-            "absolute inset-x-0 top-0 bg-cream px-[clamp(18px,4vw,46px)] py-[clamp(38px,6vh,72px)] shadow-[0_30px_60px_-28px_rgba(0,0,0,0.4)] transition-transform duration-500",
+            "absolute inset-x-0 top-0 bg-cream px-[clamp(12px,4vw,46px)] py-[clamp(38px,6vh,72px)] shadow-[0_30px_60px_-28px_rgba(0,0,0,0.4)] transition-transform duration-500",
             searchOpen ? "translate-y-0" : "-translate-y-full"
           )}
         >
